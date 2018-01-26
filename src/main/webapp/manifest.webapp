@@ -1,6 +1,6 @@
 {
-  "name": "Invoice",
-  "short_name": "Invoice",
+  "name": "Invoiceapp",
+  "short_name": "Invoiceapp",
   "icons": [
       {
           "src": "./content/images/logo-jhipster.png",

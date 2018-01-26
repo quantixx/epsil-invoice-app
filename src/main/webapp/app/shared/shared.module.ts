@@ -2,8 +2,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
-    InvoiceSharedLibsModule,
-    InvoiceSharedCommonModule,
+    InvoiceappSharedLibsModule,
+    InvoiceappSharedCommonModule,
     CSRFService,
     AuthServerProvider,
     AccountService,
@@ -16,8 +16,8 @@ import {
 
 @NgModule({
     imports: [
-        InvoiceSharedLibsModule,
-        InvoiceSharedCommonModule
+        InvoiceappSharedLibsModule,
+        InvoiceappSharedCommonModule
     ],
     declarations: [
         HasAnyAuthorityDirective
@@ -33,11 +33,11 @@ import {
         DatePipe
     ],
     exports: [
-        InvoiceSharedCommonModule,
+        InvoiceappSharedCommonModule,
         HasAnyAuthorityDirective,
         DatePipe
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class InvoiceSharedModule {}
+export class InvoiceappSharedModule {}

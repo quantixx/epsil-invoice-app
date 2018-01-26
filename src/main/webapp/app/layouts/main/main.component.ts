@@ -4,10 +4,10 @@ import { Router, ActivatedRouteSnapshot, NavigationEnd } from '@angular/router';
 import { JhiLanguageHelper } from '../../shared';
 
 @Component({
-    selector: 'jhi-main',
+    selector: 'inv-main',
     templateUrl: './main.component.html'
 })
-export class JhiMainComponent implements OnInit {
+export class InvMainComponent implements OnInit {
 
     constructor(
         private jhiLanguageHelper: JhiLanguageHelper,
@@ -15,7 +15,7 @@ export class JhiMainComponent implements OnInit {
     ) {}
 
     private getPageTitle(routeSnapshot: ActivatedRouteSnapshot) {
-        let title: string = (routeSnapshot.data && routeSnapshot.data['pageTitle']) ? routeSnapshot.data['pageTitle'] : 'invoiceApp';
+        let title: string = (routeSnapshot.data && routeSnapshot.data['pageTitle']) ? routeSnapshot.data['pageTitle'] : 'invoiceappApp';
         if (routeSnapshot.firstChild) {
             title = this.getPageTitle(routeSnapshot.firstChild) || title;
         }

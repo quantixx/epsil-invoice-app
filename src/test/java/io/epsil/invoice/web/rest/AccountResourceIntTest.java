@@ -1,6 +1,6 @@
 package io.epsil.invoice.web.rest;
 
-import io.epsil.invoice.InvoiceApp;
+import io.epsil.invoice.InvoiceappApp;
 import io.epsil.invoice.web.rest.errors.ExceptionTranslator;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -25,7 +25,7 @@ import org.springframework.web.context.WebApplicationContext;
  * @see AccountResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = InvoiceApp.class)
+@SpringBootTest(classes = InvoiceappApp.class)
 public class AccountResourceIntTest {
 
     @Autowired

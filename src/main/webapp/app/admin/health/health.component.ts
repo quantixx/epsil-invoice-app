@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { JhiHealthService } from './health.service';
-import { JhiHealthModalComponent } from './health-modal.component';
+import { InvHealthService } from './health.service';
+import { InvHealthModalComponent } from './health-modal.component';
 
 @Component({
-    selector: 'jhi-health',
+    selector: 'inv-health',
     templateUrl: './health.component.html'
 })
-export class JhiHealthCheckComponent implements OnInit {
+export class InvHealthCheckComponent implements OnInit {
     healthData: any;
     updatingHealth: boolean;
 
     constructor(
         private modalService: NgbModal,
-        private healthService: JhiHealthService
+        private healthService: InvHealthService
     ) {
 
     }
@@ -50,7 +50,7 @@ export class JhiHealthCheckComponent implements OnInit {
     }
 
     showHealth(health: any) {
-        const modalRef  = this.modalService.open(JhiHealthModalComponent);
+        const modalRef  = this.modalService.open(InvHealthModalComponent);
         modalRef.componentInstance.currentHealth = health;
         modalRef.result.then((result) => {
             // Left blank intentionally, nothing to do here

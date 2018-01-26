@@ -18,7 +18,7 @@ describe('administration', () => {
     });
 
     it('should load metrics', () => {
-        navBarPage.clickOnAdmin('jhi-metrics');
+        navBarPage.clickOnAdmin('inv-metrics');
         const expect1 = /metrics.title/;
         element.all(by.css('h2 span')).first().getAttribute('jhiTranslate').then((value) => {
             expect(value).toMatch(expect1);
@@ -26,7 +26,7 @@ describe('administration', () => {
     });
 
     it('should load health', () => {
-        navBarPage.clickOnAdmin('jhi-health');
+        navBarPage.clickOnAdmin('inv-health');
         const expect1 = /health.title/;
         element.all(by.css('h2 span')).first().getAttribute('jhiTranslate').then((value) => {
             expect(value).toMatch(expect1);
@@ -34,7 +34,7 @@ describe('administration', () => {
     });
 
     it('should load configuration', () => {
-        navBarPage.clickOnAdmin('jhi-configuration');
+        navBarPage.clickOnAdmin('inv-configuration');
         const expect1 = /configuration.title/;
         element.all(by.css('h2')).first().getAttribute('jhiTranslate').then((value) => {
             expect(value).toMatch(expect1);

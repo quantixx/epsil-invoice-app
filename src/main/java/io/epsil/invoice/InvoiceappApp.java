@@ -28,18 +28,18 @@ import java.util.Collection;
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 @EnableDiscoveryClient
 @EnableZuulProxy
-public class InvoiceApp {
+public class InvoiceappApp {
 
-    private static final Logger log = LoggerFactory.getLogger(InvoiceApp.class);
+    private static final Logger log = LoggerFactory.getLogger(InvoiceappApp.class);
 
     private final Environment env;
 
-    public InvoiceApp(Environment env) {
+    public InvoiceappApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes invoice.
+     * Initializes invoiceapp.
      * <p>
      * Spring profiles can be configured with a program arguments --spring.profiles.active=your-active-profile
      * <p>
@@ -65,7 +65,7 @@ public class InvoiceApp {
      * @throws UnknownHostException if the local host name could not be resolved into an address
      */
     public static void main(String[] args) throws UnknownHostException {
-        SpringApplication app = new SpringApplication(InvoiceApp.class);
+        SpringApplication app = new SpringApplication(InvoiceappApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         String protocol = "http";

@@ -4,18 +4,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Ng2Webstorage } from 'ngx-webstorage';
 
-import { InvoiceSharedModule, UserRouteAccessService } from './shared';
-import { InvoiceAppRoutingModule} from './app-routing.module';
-import { InvoiceHomeModule } from './home/home.module';
-import { InvoiceAdminModule } from './admin/admin.module';
-import { InvoiceEntityModule } from './entities/entity.module';
+import { InvoiceappSharedModule, UserRouteAccessService } from './shared';
+import { InvoiceappAppRoutingModule} from './app-routing.module';
+import { InvoiceappHomeModule } from './home/home.module';
+import { InvoiceappAdminModule } from './admin/admin.module';
+import { InvoiceappEntityModule } from './entities/entity.module';
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
 import {
-    JhiMainComponent,
+    InvMainComponent,
     NavbarComponent,
     FooterComponent,
     ProfileService,
@@ -27,16 +27,16 @@ import {
 @NgModule({
     imports: [
         BrowserModule,
-        InvoiceAppRoutingModule,
+        InvoiceappAppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
-        InvoiceSharedModule,
-        InvoiceHomeModule,
-        InvoiceAdminModule,
-        InvoiceEntityModule,
+        InvoiceappSharedModule,
+        InvoiceappHomeModule,
+        InvoiceappAdminModule,
+        InvoiceappEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
-        JhiMainComponent,
+        InvMainComponent,
         NavbarComponent,
         ErrorComponent,
         PageRibbonComponent,
@@ -49,6 +49,6 @@ import {
         PaginationConfig,
         UserRouteAccessService
     ],
-    bootstrap: [ JhiMainComponent ]
+    bootstrap: [ InvMainComponent ]
 })
-export class InvoiceAppModule {}
+export class InvoiceappAppModule {}

@@ -5,7 +5,7 @@
       "nativeLanguage": "en"
     },
     "jhipsterVersion": "4.13.3",
-    "baseName": "invoice",
+    "baseName": "invoiceapp",
     "packageName": "io.epsil.invoice",
     "packageFolder": "io/epsil/invoice",
     "serverPort": "8080",
@@ -30,7 +30,7 @@
       "gatling",
       "protractor"
     ],
-    "jhiPrefix": "jhi",
+    "jhiPrefix": "inv",
     "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": [

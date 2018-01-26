@@ -1,57 +1,57 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { InvoiceSharedModule } from '../shared';
+import { InvoiceappSharedModule } from '../shared';
 /* jhipster-needle-add-admin-module-import - JHipster will add admin modules imports here */
 
 import {
     adminState,
     AuditsComponent,
     LogsComponent,
-    JhiMetricsMonitoringModalComponent,
-    JhiMetricsMonitoringComponent,
-    JhiHealthModalComponent,
-    JhiHealthCheckComponent,
-    JhiConfigurationComponent,
-    JhiDocsComponent,
+    InvMetricsMonitoringModalComponent,
+    InvMetricsMonitoringComponent,
+    InvHealthModalComponent,
+    InvHealthCheckComponent,
+    InvConfigurationComponent,
+    InvDocsComponent,
     AuditsService,
-    JhiConfigurationService,
-    JhiHealthService,
-    JhiMetricsService,
+    InvConfigurationService,
+    InvHealthService,
+    InvMetricsService,
     GatewayRoutesService,
-    JhiGatewayComponent,
+    InvGatewayComponent,
     LogsService,
 } from './';
 
 @NgModule({
     imports: [
-        InvoiceSharedModule,
+        InvoiceappSharedModule,
         RouterModule.forChild(adminState),
         /* jhipster-needle-add-admin-module - JHipster will add admin modules here */
     ],
     declarations: [
         AuditsComponent,
         LogsComponent,
-        JhiConfigurationComponent,
-        JhiHealthCheckComponent,
-        JhiHealthModalComponent,
-        JhiDocsComponent,
-        JhiGatewayComponent,
-        JhiMetricsMonitoringComponent,
-        JhiMetricsMonitoringModalComponent
+        InvConfigurationComponent,
+        InvHealthCheckComponent,
+        InvHealthModalComponent,
+        InvDocsComponent,
+        InvGatewayComponent,
+        InvMetricsMonitoringComponent,
+        InvMetricsMonitoringModalComponent
     ],
     entryComponents: [
-        JhiHealthModalComponent,
-        JhiMetricsMonitoringModalComponent,
+        InvHealthModalComponent,
+        InvMetricsMonitoringModalComponent,
     ],
     providers: [
         AuditsService,
-        JhiConfigurationService,
-        JhiHealthService,
-        JhiMetricsService,
+        InvConfigurationService,
+        InvHealthService,
+        InvMetricsService,
         GatewayRoutesService,
         LogsService,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class InvoiceAdminModule {}
+export class InvoiceappAdminModule {}

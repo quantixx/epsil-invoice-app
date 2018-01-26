@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { JhiConfigurationService } from './configuration.service';
+import { InvConfigurationService } from './configuration.service';
 
 @Component({
-    selector: 'jhi-configuration',
+    selector: 'inv-configuration',
     templateUrl: './configuration.component.html'
 })
-export class JhiConfigurationComponent implements OnInit {
+export class InvConfigurationComponent implements OnInit {
     allConfiguration: any = null;
     configuration: any = null;
     configKeys: any[];
@@ -15,7 +15,7 @@ export class JhiConfigurationComponent implements OnInit {
     reverse: boolean;
 
     constructor(
-        private configurationService: JhiConfigurationService
+        private configurationService: InvConfigurationService
     ) {
         this.configKeys = [];
         this.filter = '';

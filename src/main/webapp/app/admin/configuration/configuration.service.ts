@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { SERVER_API_URL } from '../../app.constants';
 
 @Injectable()
-export class JhiConfigurationService {
+export class InvConfigurationService {
 
     constructor(private http: Http) {
     }

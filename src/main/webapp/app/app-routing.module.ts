@@ -15,4 +15,4 @@ const LAYOUT_ROUTES = [
         RouterModule
     ]
 })
-export class InvoiceAppRoutingModule {}
+export class InvoiceappAppRoutingModule {}

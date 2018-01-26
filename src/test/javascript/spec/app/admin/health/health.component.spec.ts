@@ -1,33 +1,33 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
-import { InvoiceTestModule } from '../../../test.module';
-import { JhiHealthCheckComponent } from '../../../../../../main/webapp/app/admin/health/health.component';
-import { JhiHealthService } from '../../../../../../main/webapp/app/admin/health/health.service';
+import { InvoiceappTestModule } from '../../../test.module';
+import { InvHealthCheckComponent } from '../../../../../../main/webapp/app/admin/health/health.component';
+import { InvHealthService } from '../../../../../../main/webapp/app/admin/health/health.service';
 
 describe('Component Tests', () => {
 
-    describe('JhiHealthCheckComponent', () => {
+    describe('InvHealthCheckComponent', () => {
 
-        let comp: JhiHealthCheckComponent;
-        let fixture: ComponentFixture<JhiHealthCheckComponent>;
-        let service: JhiHealthService;
+        let comp: InvHealthCheckComponent;
+        let fixture: ComponentFixture<InvHealthCheckComponent>;
+        let service: InvHealthService;
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [InvoiceTestModule],
-                declarations: [JhiHealthCheckComponent],
+                imports: [InvoiceappTestModule],
+                declarations: [InvHealthCheckComponent],
                 providers: [
-                    JhiHealthService
+                    InvHealthService
                 ]
             })
-            .overrideTemplate(JhiHealthCheckComponent, '')
+            .overrideTemplate(InvHealthCheckComponent, '')
             .compileComponents();
         }));
 
         beforeEach(() => {
-            fixture = TestBed.createComponent(JhiHealthCheckComponent);
+            fixture = TestBed.createComponent(InvHealthCheckComponent);
             comp = fixture.componentInstance;
-            service = fixture.debugElement.injector.get(JhiHealthService);
+            service = fixture.debugElement.injector.get(InvHealthService);
         });
 
         describe('baseName and subSystemName', () => {

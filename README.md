@@ -1,4 +1,4 @@
-# invoice
+# invoiceapp
 This application was generated using JHipster 4.13.3, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.13.3](http://www.jhipster.tech/documentation-archive/v4.13.3).
 
 This is a "gateway" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
@@ -155,7 +155,7 @@ will generate few files:
 
 ## Building for production
 
-To optimize the invoice application for production, run:
+To optimize the invoiceapp application for production, run:
 
     ./mvnw -Pprod clean package
 

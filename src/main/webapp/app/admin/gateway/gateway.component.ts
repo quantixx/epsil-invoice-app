@@ -4,11 +4,11 @@ import { GatewayRoutesService } from './gateway-routes.service';
 import { GatewayRoute } from './gateway-route.model';
 
 @Component({
-    selector: 'jhi-gateway',
+    selector: 'inv-gateway',
     templateUrl: './gateway.component.html',
     providers: [ GatewayRoutesService ]
 })
-export class JhiGatewayComponent implements OnInit {
+export class InvGatewayComponent implements OnInit {
 
     gatewayRoutes: GatewayRoute[];
     updatingRoutes: Boolean;
