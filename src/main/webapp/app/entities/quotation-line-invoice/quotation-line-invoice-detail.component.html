@@ -1,0 +1,38 @@
+
+<div *ngIf="quotationLine">
+    <h2><span jhiTranslate="invoiceappApp.quotationLine.detail.title">Quotation Line</span> {{quotationLine.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.quotationLine.description">Description</span></dt>
+        <dd>
+            <span>{{quotationLine.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationLine.quantity">Quantity</span></dt>
+        <dd>
+            <span>{{quotationLine.quantity}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationLine.unitCost">Unit Cost</span></dt>
+        <dd>
+            <span>{{quotationLine.unitCost}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationLine.subTotal">Sub Total</span></dt>
+        <dd>
+            <span>{{quotationLine.subTotal}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'quotation-line-invoice/'+ quotationLine.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

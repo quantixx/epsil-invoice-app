@@ -1,0 +1,10 @@
+{
+    "invoiceappApp": {
+        "QuotationStatus" : {
+            "null": "",
+            "CREATED": "CREATED",
+            "COMMITTED": "COMMITTED",
+            "CANCELLED": "CANCELLED"
+        }
+    }
+}

@@ -1,0 +1,94 @@
+
+<div *ngIf="quotation">
+    <h2><span jhiTranslate="invoiceappApp.quotation.detail.title">Quotation</span> {{quotation.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.quotation.description">Description</span></dt>
+        <dd>
+            <span>{{quotation.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.docType">Doc Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'invoiceappApp.DocumentType.' + quotation.docType}}">{{quotation.docType}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.type">Type</span></dt>
+        <dd>
+            <span>{{quotation.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.vatRate">Vat Rate</span></dt>
+        <dd>
+            <span>{{quotation.vatRate}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.validityTerms">Validity Terms</span></dt>
+        <dd>
+            <span>{{quotation.validityTerms}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.acceptionation">Acceptionation</span></dt>
+        <dd>
+            <span>{{quotation.acceptionation}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.title">Title</span></dt>
+        <dd>
+            <span>{{quotation.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.number">Number</span></dt>
+        <dd>
+            <span>{{quotation.number}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.subTotalBeforeDiscount">Sub Total Before Discount</span></dt>
+        <dd>
+            <span>{{quotation.subTotalBeforeDiscount}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.discountRate">Discount Rate</span></dt>
+        <dd>
+            <span>{{quotation.discountRate}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.discountAmount">Discount Amount</span></dt>
+        <dd>
+            <span>{{quotation.discountAmount}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.subTotal">Sub Total</span></dt>
+        <dd>
+            <span>{{quotation.subTotal}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.vatAmount">Vat Amount</span></dt>
+        <dd>
+            <span>{{quotation.vatAmount}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.total">Total</span></dt>
+        <dd>
+            <span>{{quotation.total}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.additionalInformation">Additional Information</span></dt>
+        <dd>
+            <span>{{quotation.additionalInformation}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.family">Family</span></dt>
+        <dd>
+            <div *ngIf="quotation.familyId">
+                <a [routerLink]="['/family-invoice', quotation.familyId]">{{quotation.familyName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotation.tenant">Tenant</span></dt>
+        <dd>
+            <div *ngIf="quotation.tenantId">
+                <a [routerLink]="['/tenant-invoice', quotation.tenantId]">{{quotation.tenantName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'quotation-invoice/'+ quotation.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

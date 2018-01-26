@@ -1,0 +1,86 @@
+
+<div *ngIf="tenant">
+    <h2><span jhiTranslate="invoiceappApp.tenant.detail.title">Tenant</span> {{tenant.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.tenant.slug">Slug</span></dt>
+        <dd>
+            <span>{{tenant.slug}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.name">Name</span></dt>
+        <dd>
+            <span>{{tenant.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.companyName">Company Name</span></dt>
+        <dd>
+            <span>{{tenant.companyName}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.description">Description</span></dt>
+        <dd>
+            <span>{{tenant.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.vatIdentification">Vat Identification</span></dt>
+        <dd>
+            <span>{{tenant.vatIdentification}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.businessIdentification">Business Identification</span></dt>
+        <dd>
+            <span>{{tenant.businessIdentification}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.businessRegistry">Business Registry</span></dt>
+        <dd>
+            <span>{{tenant.businessRegistry}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.businessCode">Business Code</span></dt>
+        <dd>
+            <span>{{tenant.businessCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.financialYearFrom">Financial Year From</span></dt>
+        <dd>
+            <span>{{tenant.financialYearFrom}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.financialYearTo">Financial Year To</span></dt>
+        <dd>
+            <span>{{tenant.financialYearTo}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.invoiceAddress">Invoice Address</span></dt>
+        <dd>
+            <div *ngIf="tenant.invoiceAddressId">
+                <a [routerLink]="['/address-invoice', tenant.invoiceAddressId]">{{tenant.invoiceAddressId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.bank">Bank</span></dt>
+        <dd>
+            <div *ngIf="tenant.bankId">
+                <a [routerLink]="['/bank-invoice', tenant.bankId]">{{tenant.bankBankName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.logo">Logo</span></dt>
+        <dd>
+            <div *ngIf="tenant.logoId">
+                <a [routerLink]="['/document-invoice', tenant.logoId]">{{tenant.logoName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.tenant.contact">Contact</span></dt>
+        <dd>
+            <div *ngIf="tenant.contactId">
+                <a [routerLink]="['/contact-invoice', tenant.contactId]">{{tenant.contactLastName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tenant-invoice/'+ tenant.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

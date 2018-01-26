@@ -1,0 +1,22 @@
+{
+    "invoiceappApp": {
+        "quotationState" : {
+            "home": {
+                "title": "Quotation States",
+                "createLabel": "Create a new Quotation State",
+                "createOrEditLabel": "Create or edit a Quotation State"
+            },
+            "created": "A new Quotation State is created with identifier {{ param }}",
+            "updated": "A Quotation State is updated with identifier {{ param }}",
+            "deleted": "A Quotation State is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Quotation State {{ id }}?"
+            },
+            "detail": {
+                "title": "Quotation State"
+            },
+            "status": "Status",
+            "statusDate": "Status Date"
+        }
+    }
+}

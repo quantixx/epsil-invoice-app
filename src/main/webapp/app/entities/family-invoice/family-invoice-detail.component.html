@@ -1,0 +1,40 @@
+
+<div *ngIf="family">
+    <h2><span jhiTranslate="invoiceappApp.family.detail.title">Family</span> {{family.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.family.slug">Slug</span></dt>
+        <dd>
+            <span>{{family.slug}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.family.name">Name</span></dt>
+        <dd>
+            <span>{{family.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.family.description">Description</span></dt>
+        <dd>
+            <span>{{family.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.family.tenant">Tenant</span></dt>
+        <dd>
+            <div *ngIf="family.tenantId">
+                <a [routerLink]="['/tenant-invoice', family.tenantId]">{{family.tenantName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'family-invoice/'+ family.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

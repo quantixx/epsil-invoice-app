@@ -1,0 +1,76 @@
+<div>
+    <h2>
+        <span jhiTranslate="invoiceappApp.family.home.title">Families</span>
+        <button class="btn btn-primary float-right jh-create-entity create-family-invoice" [routerLink]="['/', { outlets: { popup: ['family-invoice-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="invoiceappApp.family.home.createLabel">
+            Create new Family
+            </span>
+        </button>
+    </h2>
+    <inv-alert></inv-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="families">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="slug"><span jhiTranslate="invoiceappApp.family.slug">Slug</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="name"><span jhiTranslate="invoiceappApp.family.name">Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="description"><span jhiTranslate="invoiceappApp.family.description">Description</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenantName"><span jhiTranslate="invoiceappApp.family.tenant">Tenant</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let family of families ;trackBy: trackId">
+                <td><a [routerLink]="['../family-invoice', family.id ]">{{family.id}}</a></td>
+                <td>{{family.slug}}</td>
+                <td>{{family.name}}</td>
+                <td>{{family.description}}</td>
+                <td>
+                    <div *ngIf="family.tenantId">
+                        <a [routerLink]="['../tenant-invoice', family.tenantId  ]" >{{family.tenantName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../family-invoice', family.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'family-invoice/'+ family.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'family-invoice/'+ family.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="families && families.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

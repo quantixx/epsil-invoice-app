@@ -1,0 +1,29 @@
+{
+    "invoiceappApp": {
+        "invoiceDefinition" : {
+            "home": {
+                "title": "InvoiceDefinitions",
+                "createLabel": "Créer un nouveau Invoice Definition",
+                "createOrEditLabel": "Créer ou éditer un Invoice Definition"
+            },
+            "created": "Un nouveau Invoice Definition a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Invoice Definition avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Invoice Definition avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Invoice Definition {{ id }} ?"
+            },
+            "detail": {
+                "title": "Invoice Definition"
+            },
+            "title": "Title",
+            "description": "Description",
+            "docType": "Doc Type",
+            "vatRate": "Vat Rate",
+            "terms": "Terms",
+            "penalties": "Penalties",
+            "family": "Family",
+            "language": "Language",
+            "tenant": "Tenant"
+        }
+    }
+}

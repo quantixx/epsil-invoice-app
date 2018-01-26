@@ -1,0 +1,30 @@
+{
+    "invoiceappApp": {
+        "organisation" : {
+            "home": {
+                "title": "Organisations",
+                "createLabel": "Créer un nouveau Organisation",
+                "createOrEditLabel": "Créer ou éditer un Organisation"
+            },
+            "created": "Un nouveau Organisation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Organisation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Organisation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Organisation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Organisation"
+            },
+            "slug": "Slug",
+            "name": "Name",
+            "businessIdentification": "Business Identification",
+            "corporateName": "Corporate Name",
+            "vatIdentification": "Vat Identification",
+            "activated": "Activated",
+            "createdOn": "Created On",
+            "address": "Address",
+            "contact": "Contact",
+            "tenant": "Tenant"
+        }
+    }
+}

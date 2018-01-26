@@ -1,0 +1,56 @@
+
+<div *ngIf="bank">
+    <h2><span jhiTranslate="invoiceappApp.bank.detail.title">Bank</span> {{bank.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.bank.bankName">Bank Name</span></dt>
+        <dd>
+            <span>{{bank.bankName}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.bank.agencyName">Agency Name</span></dt>
+        <dd>
+            <span>{{bank.agencyName}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.bank.bankAccount">Bank Account</span></dt>
+        <dd>
+            <span>{{bank.bankAccount}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.bank.iban">Iban</span></dt>
+        <dd>
+            <span>{{bank.iban}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.bank.bic">Bic</span></dt>
+        <dd>
+            <span>{{bank.bic}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.bank.phoneArea">Phone Area</span></dt>
+        <dd>
+            <span>{{bank.phoneArea}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.bank.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{bank.phoneNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.bank.address">Address</span></dt>
+        <dd>
+            <div *ngIf="bank.addressId">
+                <a [routerLink]="['/address-invoice', bank.addressId]">{{bank.addressId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'bank-invoice/'+ bank.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

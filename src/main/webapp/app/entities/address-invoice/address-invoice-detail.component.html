@@ -1,0 +1,52 @@
+
+<div *ngIf="address">
+    <h2><span jhiTranslate="invoiceappApp.address.detail.title">Address</span> {{address.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.address.street">Street</span></dt>
+        <dd>
+            <span>{{address.street}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.address.street2">Street 2</span></dt>
+        <dd>
+            <span>{{address.street2}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.address.city">City</span></dt>
+        <dd>
+            <span>{{address.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.address.state">State</span></dt>
+        <dd>
+            <span>{{address.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.address.zipCode">Zip Code</span></dt>
+        <dd>
+            <span>{{address.zipCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.address.additionalInformation">Additional Information</span></dt>
+        <dd>
+            <span>{{address.additionalInformation}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.address.country">Country</span></dt>
+        <dd>
+            <div *ngIf="address.countryId">
+                <a [routerLink]="['/country-invoice', address.countryId]">{{address.countryName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'address-invoice/'+ address.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

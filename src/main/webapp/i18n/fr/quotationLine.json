@@ -1,0 +1,24 @@
+{
+    "invoiceappApp": {
+        "quotationLine" : {
+            "home": {
+                "title": "QuotationLines",
+                "createLabel": "Créer un nouveau Quotation Line",
+                "createOrEditLabel": "Créer ou éditer un Quotation Line"
+            },
+            "created": "Un nouveau Quotation Line a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Quotation Line avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Quotation Line avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Quotation Line {{ id }} ?"
+            },
+            "detail": {
+                "title": "Quotation Line"
+            },
+            "description": "Description",
+            "quantity": "Quantity",
+            "unitCost": "Unit Cost",
+            "subTotal": "Sub Total"
+        }
+    }
+}

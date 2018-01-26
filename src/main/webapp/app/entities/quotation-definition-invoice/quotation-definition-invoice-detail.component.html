@@ -1,0 +1,64 @@
+
+<div *ngIf="quotationDefinition">
+    <h2><span jhiTranslate="invoiceappApp.quotationDefinition.detail.title">Quotation Definition</span> {{quotationDefinition.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.quotationDefinition.description">Description</span></dt>
+        <dd>
+            <span>{{quotationDefinition.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationDefinition.docType">Doc Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'invoiceappApp.DocumentType.' + quotationDefinition.docType}}">{{quotationDefinition.docType}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationDefinition.type">Type</span></dt>
+        <dd>
+            <span>{{quotationDefinition.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationDefinition.vatRate">Vat Rate</span></dt>
+        <dd>
+            <span>{{quotationDefinition.vatRate}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationDefinition.validityTerms">Validity Terms</span></dt>
+        <dd>
+            <span>{{quotationDefinition.validityTerms}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationDefinition.acceptation">Acceptation</span></dt>
+        <dd>
+            <span>{{quotationDefinition.acceptation}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationDefinition.family">Family</span></dt>
+        <dd>
+            <div *ngIf="quotationDefinition.familyId">
+                <a [routerLink]="['/family-invoice', quotationDefinition.familyId]">{{quotationDefinition.familyName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationDefinition.language">Language</span></dt>
+        <dd>
+            <div *ngIf="quotationDefinition.languageId">
+                <a [routerLink]="['/language-invoice', quotationDefinition.languageId]">{{quotationDefinition.languageName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationDefinition.tenant">Tenant</span></dt>
+        <dd>
+            <div *ngIf="quotationDefinition.tenantId">
+                <a [routerLink]="['/tenant-invoice', quotationDefinition.tenantId]">{{quotationDefinition.tenantName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'quotation-definition-invoice/'+ quotationDefinition.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

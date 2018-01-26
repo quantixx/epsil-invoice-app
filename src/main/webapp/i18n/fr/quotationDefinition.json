@@ -1,0 +1,29 @@
+{
+    "invoiceappApp": {
+        "quotationDefinition" : {
+            "home": {
+                "title": "QuotationDefinitions",
+                "createLabel": "Créer un nouveau Quotation Definition",
+                "createOrEditLabel": "Créer ou éditer un Quotation Definition"
+            },
+            "created": "Un nouveau Quotation Definition a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Quotation Definition avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Quotation Definition avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Quotation Definition {{ id }} ?"
+            },
+            "detail": {
+                "title": "Quotation Definition"
+            },
+            "description": "Description",
+            "docType": "Doc Type",
+            "type": "Type",
+            "vatRate": "Vat Rate",
+            "validityTerms": "Validity Terms",
+            "acceptation": "Acceptation",
+            "family": "Family",
+            "language": "Language",
+            "tenant": "Tenant"
+        }
+    }
+}

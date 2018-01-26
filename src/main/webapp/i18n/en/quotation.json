@@ -1,0 +1,38 @@
+{
+    "invoiceappApp": {
+        "quotation" : {
+            "home": {
+                "title": "Quotations",
+                "createLabel": "Create a new Quotation",
+                "createOrEditLabel": "Create or edit a Quotation"
+            },
+            "created": "A new Quotation is created with identifier {{ param }}",
+            "updated": "A Quotation is updated with identifier {{ param }}",
+            "deleted": "A Quotation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Quotation {{ id }}?"
+            },
+            "detail": {
+                "title": "Quotation"
+            },
+            "description": "Description",
+            "docType": "Doc Type",
+            "type": "Type",
+            "vatRate": "Vat Rate",
+            "validityTerms": "Validity Terms",
+            "acceptionation": "Acceptionation",
+            "title": "Title",
+            "number": "Number",
+            "subTotalBeforeDiscount": "Sub Total Before Discount",
+            "discountRate": "Discount Rate",
+            "discountAmount": "Discount Amount",
+            "subTotal": "Sub Total",
+            "vatAmount": "Vat Amount",
+            "total": "Total",
+            "additionalInformation": "Additional Information",
+            "family": "Family",
+            "invoice": "Invoice",
+            "tenant": "Tenant"
+        }
+    }
+}

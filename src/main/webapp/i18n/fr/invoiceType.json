@@ -1,0 +1,9 @@
+{
+    "invoiceappApp": {
+        "InvoiceType" : {
+            "null": "",
+            "INVOICE": "INVOICE",
+            "CREDIT_INVOICE": "CREDIT_INVOICE"
+        }
+    }
+}

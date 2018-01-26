@@ -1,0 +1,64 @@
+
+<div *ngIf="invoiceDefinition">
+    <h2><span jhiTranslate="invoiceappApp.invoiceDefinition.detail.title">Invoice Definition</span> {{invoiceDefinition.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.invoiceDefinition.title">Title</span></dt>
+        <dd>
+            <span>{{invoiceDefinition.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceDefinition.description">Description</span></dt>
+        <dd>
+            <span>{{invoiceDefinition.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceDefinition.docType">Doc Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'invoiceappApp.DocumentType.' + invoiceDefinition.docType}}">{{invoiceDefinition.docType}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceDefinition.vatRate">Vat Rate</span></dt>
+        <dd>
+            <span>{{invoiceDefinition.vatRate}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceDefinition.terms">Terms</span></dt>
+        <dd>
+            <span>{{invoiceDefinition.terms}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceDefinition.penalties">Penalties</span></dt>
+        <dd>
+            <span>{{invoiceDefinition.penalties}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceDefinition.family">Family</span></dt>
+        <dd>
+            <div *ngIf="invoiceDefinition.familyId">
+                <a [routerLink]="['/family-invoice', invoiceDefinition.familyId]">{{invoiceDefinition.familyName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceDefinition.language">Language</span></dt>
+        <dd>
+            <div *ngIf="invoiceDefinition.languageId">
+                <a [routerLink]="['/language-invoice', invoiceDefinition.languageId]">{{invoiceDefinition.languageName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceDefinition.tenant">Tenant</span></dt>
+        <dd>
+            <div *ngIf="invoiceDefinition.tenantId">
+                <a [routerLink]="['/tenant-invoice', invoiceDefinition.tenantId]">{{invoiceDefinition.tenantName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'invoice-definition-invoice/'+ invoiceDefinition.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

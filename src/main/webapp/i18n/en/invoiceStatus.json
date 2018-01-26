@@ -1,0 +1,11 @@
+{
+    "invoiceappApp": {
+        "InvoiceStatus" : {
+            "null": "",
+            "CREATED": "CREATED",
+            "COMMITTED": "COMMITTED",
+            "CANCELLED": "CANCELLED",
+            "PAID": "PAID"
+        }
+    }
+}

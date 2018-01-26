@@ -1,0 +1,80 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="mySequenceLabel" jhiTranslate="invoiceappApp.sequence.home.createOrEditLabel">Create or edit a Sequence</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <inv-alert-error></inv-alert-error>
+        <div class="form-group" [hidden]="!sequence.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="sequence.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.sequence.docType" for="field_docType">Doc Type</label>
+            <select class="form-control" name="docType" [(ngModel)]="sequence.docType" id="field_docType"  required>
+                <option value="TENANT_LOGO">{{'invoiceappApp.DocumentType.TENANT_LOGO' | translate}}</option>
+                <option value="INVOICE">{{'invoiceappApp.DocumentType.INVOICE' | translate}}</option>
+                <option value="QUOTATION">{{'invoiceappApp.DocumentType.QUOTATION' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.docType?.dirty && editForm.controls.docType?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.docType?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.sequence.next" for="field_next">Next</label>
+            <input type="number" class="form-control" name="next" id="field_next"
+                [(ngModel)]="sequence.next" required/>
+            <div [hidden]="!(editForm.controls.next?.dirty && editForm.controls.next?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.next?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.next?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.sequence.tenant" for="field_tenant">Tenant</label>
+            <select class="form-control" id="field_tenant" name="tenant" [(ngModel)]="sequence.tenantId"  required>
+                <option *ngIf="!editForm.value.tenant" [ngValue]="null" selected></option>
+                <option [ngValue]="tenantOption.id" *ngFor="let tenantOption of tenants; trackBy: trackTenantById">{{tenantOption.name}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.tenant?.dirty && editForm.controls.tenant?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.tenant?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.sequence.family" for="field_family">Family</label>
+            <select class="form-control" id="field_family" name="family" [(ngModel)]="sequence.familyId"  required>
+                <option *ngIf="!editForm.value.family" [ngValue]="null" selected></option>
+                <option [ngValue]="familyOption.id" *ngFor="let familyOption of families; trackBy: trackFamilyById">{{familyOption.name}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.family?.dirty && editForm.controls.family?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.family?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

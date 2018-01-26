@@ -1,0 +1,23 @@
+{
+    "invoiceappApp": {
+        "invoiceState" : {
+            "home": {
+                "title": "Invoice States",
+                "createLabel": "Create a new Invoice State",
+                "createOrEditLabel": "Create or edit a Invoice State"
+            },
+            "created": "A new Invoice State is created with identifier {{ param }}",
+            "updated": "A Invoice State is updated with identifier {{ param }}",
+            "deleted": "A Invoice State is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Invoice State {{ id }}?"
+            },
+            "detail": {
+                "title": "Invoice State"
+            },
+            "status": "Status",
+            "statusDate": "Status Date",
+            "invoice": "Invoice"
+        }
+    }
+}

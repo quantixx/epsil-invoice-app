@@ -1,0 +1,67 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myBankLabel" jhiTranslate="invoiceappApp.bank.home.createOrEditLabel">Create or edit a Bank</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <inv-alert-error></inv-alert-error>
+        <div class="form-group" [hidden]="!bank.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="bank.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.bank.bankName" for="field_bankName">Bank Name</label>
+            <input type="text" class="form-control" name="bankName" id="field_bankName"
+                [(ngModel)]="bank.bankName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.bank.agencyName" for="field_agencyName">Agency Name</label>
+            <input type="text" class="form-control" name="agencyName" id="field_agencyName"
+                [(ngModel)]="bank.agencyName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.bank.bankAccount" for="field_bankAccount">Bank Account</label>
+            <input type="text" class="form-control" name="bankAccount" id="field_bankAccount"
+                [(ngModel)]="bank.bankAccount" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.bank.iban" for="field_iban">Iban</label>
+            <input type="text" class="form-control" name="iban" id="field_iban"
+                [(ngModel)]="bank.iban" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.bank.bic" for="field_bic">Bic</label>
+            <input type="text" class="form-control" name="bic" id="field_bic"
+                [(ngModel)]="bank.bic" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.bank.phoneArea" for="field_phoneArea">Phone Area</label>
+            <input type="text" class="form-control" name="phoneArea" id="field_phoneArea"
+                [(ngModel)]="bank.phoneArea" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.bank.phoneNumber" for="field_phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                [(ngModel)]="bank.phoneNumber" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.bank.address" for="field_address">Address</label>
+            <select class="form-control" id="field_address" name="address" [(ngModel)]="bank.addressId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="addressOption.id" *ngFor="let addressOption of addresses; trackBy: trackAddressById">{{addressOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

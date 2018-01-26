@@ -1,0 +1,36 @@
+
+<div *ngIf="invoiceState">
+    <h2><span jhiTranslate="invoiceappApp.invoiceState.detail.title">Invoice State</span> {{invoiceState.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.invoiceState.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'invoiceappApp.InvoiceStatus.' + invoiceState.status}}">{{invoiceState.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceState.statusDate">Status Date</span></dt>
+        <dd>
+            <span>{{invoiceState.statusDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceState.invoice">Invoice</span></dt>
+        <dd>
+            <div *ngIf="invoiceState.invoiceId">
+                <a [routerLink]="['/invoice-invoice', invoiceState.invoiceId]">{{invoiceState.invoiceNumber}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'invoice-state-invoice/'+ invoiceState.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

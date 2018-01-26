@@ -1,0 +1,60 @@
+
+<div *ngIf="document">
+    <h2><span jhiTranslate="invoiceappApp.document.detail.title">Document</span> {{document.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.document.name">Name</span></dt>
+        <dd>
+            <span>{{document.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.document.description">Description</span></dt>
+        <dd>
+            <span>{{document.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.document.documentType">Document Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'invoiceappApp.DocumentType.' + document.documentType}}">{{document.documentType}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.document.documentSize">Document Size</span></dt>
+        <dd>
+            <span>{{document.documentSize}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.document.docusignEnvelopeId">Docusign Envelope Id</span></dt>
+        <dd>
+            <span>{{document.docusignEnvelopeId}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.document.url">Url</span></dt>
+        <dd>
+            <span>{{document.url}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.document.contentType">Content Type</span></dt>
+        <dd>
+            <span>{{document.contentType}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.document.createdOn">Created On</span></dt>
+        <dd>
+            <span>{{document.createdOn | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.document.language">Language</span></dt>
+        <dd>
+            <div *ngIf="document.languageId">
+                <a [routerLink]="['/language-invoice', document.languageId]">{{document.languageName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'document-invoice/'+ document.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

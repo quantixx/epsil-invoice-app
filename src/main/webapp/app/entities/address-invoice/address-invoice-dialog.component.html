@@ -1,0 +1,62 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myAddressLabel" jhiTranslate="invoiceappApp.address.home.createOrEditLabel">Create or edit a Address</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <inv-alert-error></inv-alert-error>
+        <div class="form-group" [hidden]="!address.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="address.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.address.street" for="field_street">Street</label>
+            <input type="text" class="form-control" name="street" id="field_street"
+                [(ngModel)]="address.street" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.address.street2" for="field_street2">Street 2</label>
+            <input type="text" class="form-control" name="street2" id="field_street2"
+                [(ngModel)]="address.street2" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.address.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                [(ngModel)]="address.city" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.address.state" for="field_state">State</label>
+            <input type="text" class="form-control" name="state" id="field_state"
+                [(ngModel)]="address.state" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.address.zipCode" for="field_zipCode">Zip Code</label>
+            <input type="text" class="form-control" name="zipCode" id="field_zipCode"
+                [(ngModel)]="address.zipCode" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.address.additionalInformation" for="field_additionalInformation">Additional Information</label>
+            <input type="text" class="form-control" name="additionalInformation" id="field_additionalInformation"
+                [(ngModel)]="address.additionalInformation" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.address.country" for="field_country">Country</label>
+            <select class="form-control" id="field_country" name="country" [(ngModel)]="address.countryId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="countryOption.id" *ngFor="let countryOption of countries; trackBy: trackCountryById">{{countryOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

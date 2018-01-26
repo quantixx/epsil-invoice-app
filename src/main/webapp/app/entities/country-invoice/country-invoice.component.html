@@ -1,0 +1,92 @@
+<div>
+    <h2>
+        <span jhiTranslate="invoiceappApp.country.home.title">Countries</span>
+        <button class="btn btn-primary float-right jh-create-entity create-country-invoice" [routerLink]="['/', { outlets: { popup: ['country-invoice-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="invoiceappApp.country.home.createLabel">
+            Create new Country
+            </span>
+        </button>
+    </h2>
+    <inv-alert></inv-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="countries">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="iso2"><span jhiTranslate="invoiceappApp.country.iso2">Iso 2</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="iso3"><span jhiTranslate="invoiceappApp.country.iso3">Iso 3</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="m49"><span jhiTranslate="invoiceappApp.country.m49">M 49</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="name"><span jhiTranslate="invoiceappApp.country.name">Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="officialNameEn"><span jhiTranslate="invoiceappApp.country.officialNameEn">Official Name En</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="officialNameFr"><span jhiTranslate="invoiceappApp.country.officialNameFr">Official Name Fr</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dial"><span jhiTranslate="invoiceappApp.country.dial">Dial</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="continent"><span jhiTranslate="invoiceappApp.country.continent">Continent</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tld"><span jhiTranslate="invoiceappApp.country.tld">Tld</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="flag32"><span jhiTranslate="invoiceappApp.country.flag32">Flag 32</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="flag128"><span jhiTranslate="invoiceappApp.country.flag128">Flag 128</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="latitude"><span jhiTranslate="invoiceappApp.country.latitude">Latitude</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="longitude"><span jhiTranslate="invoiceappApp.country.longitude">Longitude</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="zoom"><span jhiTranslate="invoiceappApp.country.zoom">Zoom</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let country of countries ;trackBy: trackId">
+                <td><a [routerLink]="['../country-invoice', country.id ]">{{country.id}}</a></td>
+                <td>{{country.iso2}}</td>
+                <td>{{country.iso3}}</td>
+                <td>{{country.m49}}</td>
+                <td>{{country.name}}</td>
+                <td>{{country.officialNameEn}}</td>
+                <td>{{country.officialNameFr}}</td>
+                <td>{{country.dial}}</td>
+                <td jhiTranslate="{{'invoiceappApp.Continent.' + country.continent}}">{{country.continent}}</td>
+                <td>{{country.tld}}</td>
+                <td>{{country.flag32}}</td>
+                <td>{{country.flag128}}</td>
+                <td>{{country.latitude}}</td>
+                <td>{{country.longitude}}</td>
+                <td>{{country.zoom}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../country-invoice', country.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'country-invoice/'+ country.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'country-invoice/'+ country.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="countries && countries.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

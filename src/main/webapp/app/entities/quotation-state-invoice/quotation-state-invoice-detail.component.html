@@ -1,0 +1,30 @@
+
+<div *ngIf="quotationState">
+    <h2><span jhiTranslate="invoiceappApp.quotationState.detail.title">Quotation State</span> {{quotationState.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.quotationState.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'invoiceappApp.QuotationStatus.' + quotationState.status}}">{{quotationState.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.quotationState.statusDate">Status Date</span></dt>
+        <dd>
+            <span>{{quotationState.statusDate | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'quotation-state-invoice/'+ quotationState.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

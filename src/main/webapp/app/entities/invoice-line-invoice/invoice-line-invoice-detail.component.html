@@ -1,0 +1,44 @@
+
+<div *ngIf="invoiceLine">
+    <h2><span jhiTranslate="invoiceappApp.invoiceLine.detail.title">Invoice Line</span> {{invoiceLine.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.invoiceLine.description">Description</span></dt>
+        <dd>
+            <span>{{invoiceLine.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceLine.quantity">Quantity</span></dt>
+        <dd>
+            <span>{{invoiceLine.quantity}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceLine.unitCost">Unit Cost</span></dt>
+        <dd>
+            <span>{{invoiceLine.unitCost}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceLine.subTotal">Sub Total</span></dt>
+        <dd>
+            <span>{{invoiceLine.subTotal}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.invoiceLine.invoice">Invoice</span></dt>
+        <dd>
+            <div *ngIf="invoiceLine.invoiceId">
+                <a [routerLink]="['/invoice-invoice', invoiceLine.invoiceId]">{{invoiceLine.invoiceNumber}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'invoice-line-invoice/'+ invoiceLine.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

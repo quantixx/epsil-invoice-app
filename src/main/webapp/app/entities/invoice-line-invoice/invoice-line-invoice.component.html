@@ -1,0 +1,78 @@
+<div>
+    <h2>
+        <span jhiTranslate="invoiceappApp.invoiceLine.home.title">Invoice Lines</span>
+        <button class="btn btn-primary float-right jh-create-entity create-invoice-line-invoice" [routerLink]="['/', { outlets: { popup: ['invoice-line-invoice-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="invoiceappApp.invoiceLine.home.createLabel">
+            Create new Invoice Line
+            </span>
+        </button>
+    </h2>
+    <inv-alert></inv-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="invoiceLines">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="description"><span jhiTranslate="invoiceappApp.invoiceLine.description">Description</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="quantity"><span jhiTranslate="invoiceappApp.invoiceLine.quantity">Quantity</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="unitCost"><span jhiTranslate="invoiceappApp.invoiceLine.unitCost">Unit Cost</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="subTotal"><span jhiTranslate="invoiceappApp.invoiceLine.subTotal">Sub Total</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="invoiceNumber"><span jhiTranslate="invoiceappApp.invoiceLine.invoice">Invoice</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let invoiceLine of invoiceLines ;trackBy: trackId">
+                <td><a [routerLink]="['../invoice-line-invoice', invoiceLine.id ]">{{invoiceLine.id}}</a></td>
+                <td>{{invoiceLine.description}}</td>
+                <td>{{invoiceLine.quantity}}</td>
+                <td>{{invoiceLine.unitCost}}</td>
+                <td>{{invoiceLine.subTotal}}</td>
+                <td>
+                    <div *ngIf="invoiceLine.invoiceId">
+                        <a [routerLink]="['../invoice-invoice', invoiceLine.invoiceId  ]" >{{invoiceLine.invoiceNumber}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../invoice-line-invoice', invoiceLine.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'invoice-line-invoice/'+ invoiceLine.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'invoice-line-invoice/'+ invoiceLine.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="invoiceLines && invoiceLines.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

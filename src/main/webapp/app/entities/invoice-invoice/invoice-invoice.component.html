@@ -1,0 +1,144 @@
+<div>
+    <h2>
+        <span jhiTranslate="invoiceappApp.invoice.home.title">Invoices</span>
+        <button class="btn btn-primary float-right jh-create-entity create-invoice-invoice" [routerLink]="['/', { outlets: { popup: ['invoice-invoice-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="invoiceappApp.invoice.home.createLabel">
+            Create new Invoice
+            </span>
+        </button>
+    </h2>
+    <inv-alert></inv-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="invoices">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="title"><span jhiTranslate="invoiceappApp.invoice.title">Title</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="description"><span jhiTranslate="invoiceappApp.invoice.description">Description</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="docType"><span jhiTranslate="invoiceappApp.invoice.docType">Doc Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="vatRate"><span jhiTranslate="invoiceappApp.invoice.vatRate">Vat Rate</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="terms"><span jhiTranslate="invoiceappApp.invoice.terms">Terms</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="penalties"><span jhiTranslate="invoiceappApp.invoice.penalties">Penalties</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="number"><span jhiTranslate="invoiceappApp.invoice.number">Number</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="invoiceType"><span jhiTranslate="invoiceappApp.invoice.invoiceType">Invoice Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="poNumber"><span jhiTranslate="invoiceappApp.invoice.poNumber">Po Number</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="subTotalBeforeDiscount"><span jhiTranslate="invoiceappApp.invoice.subTotalBeforeDiscount">Sub Total Before Discount</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="discountRate"><span jhiTranslate="invoiceappApp.invoice.discountRate">Discount Rate</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="discountAmount"><span jhiTranslate="invoiceappApp.invoice.discountAmount">Discount Amount</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="subTotal"><span jhiTranslate="invoiceappApp.invoice.subTotal">Sub Total</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="vatAmount"><span jhiTranslate="invoiceappApp.invoice.vatAmount">Vat Amount</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="total"><span jhiTranslate="invoiceappApp.invoice.total">Total</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="additionalInformation"><span jhiTranslate="invoiceappApp.invoice.additionalInformation">Additional Information</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="linkedNumber"><span jhiTranslate="invoiceappApp.invoice.linked">Linked</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="organisationName"><span jhiTranslate="invoiceappApp.invoice.organisation">Organisation</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="quotationNumber"><span jhiTranslate="invoiceappApp.invoice.quotation">Quotation</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="documentName"><span jhiTranslate="invoiceappApp.invoice.document">Document</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="languageName"><span jhiTranslate="invoiceappApp.invoice.language">Language</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="currencyCurrency"><span jhiTranslate="invoiceappApp.invoice.currency">Currency</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="familyName"><span jhiTranslate="invoiceappApp.invoice.family">Family</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenantName"><span jhiTranslate="invoiceappApp.invoice.tenant">Tenant</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let invoice of invoices ;trackBy: trackId">
+                <td><a [routerLink]="['../invoice-invoice', invoice.id ]">{{invoice.id}}</a></td>
+                <td>{{invoice.title}}</td>
+                <td>{{invoice.description}}</td>
+                <td jhiTranslate="{{'invoiceappApp.DocumentType.' + invoice.docType}}">{{invoice.docType}}</td>
+                <td>{{invoice.vatRate}}</td>
+                <td>{{invoice.terms}}</td>
+                <td>{{invoice.penalties}}</td>
+                <td>{{invoice.number}}</td>
+                <td jhiTranslate="{{'invoiceappApp.InvoiceType.' + invoice.invoiceType}}">{{invoice.invoiceType}}</td>
+                <td>{{invoice.poNumber}}</td>
+                <td>{{invoice.subTotalBeforeDiscount}}</td>
+                <td>{{invoice.discountRate}}</td>
+                <td>{{invoice.discountAmount}}</td>
+                <td>{{invoice.subTotal}}</td>
+                <td>{{invoice.vatAmount}}</td>
+                <td>{{invoice.total}}</td>
+                <td>{{invoice.additionalInformation}}</td>
+                <td>
+                    <div *ngIf="invoice.linkedId">
+                        <a [routerLink]="['../invoice-invoice', invoice.linkedId  ]" >{{invoice.linkedNumber}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoice.organisationId">
+                        <a [routerLink]="['../organisation-invoice', invoice.organisationId  ]" >{{invoice.organisationName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoice.quotationId">
+                        <a [routerLink]="['../quotation-invoice', invoice.quotationId  ]" >{{invoice.quotationNumber}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoice.documentId">
+                        <a [routerLink]="['../document-invoice', invoice.documentId  ]" >{{invoice.documentName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoice.languageId">
+                        <a [routerLink]="['../language-invoice', invoice.languageId  ]" >{{invoice.languageName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoice.currencyId">
+                        <a [routerLink]="['../currency-invoice', invoice.currencyId  ]" >{{invoice.currencyCurrency}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoice.familyId">
+                        <a [routerLink]="['../family-invoice', invoice.familyId  ]" >{{invoice.familyName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="invoice.tenantId">
+                        <a [routerLink]="['../tenant-invoice', invoice.tenantId  ]" >{{invoice.tenantName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../invoice-invoice', invoice.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'invoice-invoice/'+ invoice.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'invoice-invoice/'+ invoice.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="invoices && invoices.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

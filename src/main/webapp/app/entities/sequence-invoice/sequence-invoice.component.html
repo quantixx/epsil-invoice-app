@@ -1,0 +1,80 @@
+<div>
+    <h2>
+        <span jhiTranslate="invoiceappApp.sequence.home.title">Sequences</span>
+        <button class="btn btn-primary float-right jh-create-entity create-sequence-invoice" [routerLink]="['/', { outlets: { popup: ['sequence-invoice-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="invoiceappApp.sequence.home.createLabel">
+            Create new Sequence
+            </span>
+        </button>
+    </h2>
+    <inv-alert></inv-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sequences">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="docType"><span jhiTranslate="invoiceappApp.sequence.docType">Doc Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="next"><span jhiTranslate="invoiceappApp.sequence.next">Next</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenantName"><span jhiTranslate="invoiceappApp.sequence.tenant">Tenant</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="familyName"><span jhiTranslate="invoiceappApp.sequence.family">Family</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sequence of sequences ;trackBy: trackId">
+                <td><a [routerLink]="['../sequence-invoice', sequence.id ]">{{sequence.id}}</a></td>
+                <td jhiTranslate="{{'invoiceappApp.DocumentType.' + sequence.docType}}">{{sequence.docType}}</td>
+                <td>{{sequence.next}}</td>
+                <td>
+                    <div *ngIf="sequence.tenantId">
+                        <a [routerLink]="['../tenant-invoice', sequence.tenantId  ]" >{{sequence.tenantName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sequence.familyId">
+                        <a [routerLink]="['../family-invoice', sequence.familyId  ]" >{{sequence.familyName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../sequence-invoice', sequence.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sequence-invoice/'+ sequence.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sequence-invoice/'+ sequence.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="sequences && sequences.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

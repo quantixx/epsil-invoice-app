@@ -1,0 +1,50 @@
+
+<div *ngIf="currency">
+    <h2><span jhiTranslate="invoiceappApp.currency.detail.title">Currency</span> {{currency.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.currency.entity">Entity</span></dt>
+        <dd>
+            <span>{{currency.entity}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.currency.currency">Currency</span></dt>
+        <dd>
+            <span>{{currency.currency}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.currency.alphabeticCode">Alphabetic Code</span></dt>
+        <dd>
+            <span>{{currency.alphabeticCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.currency.numericCode">Numeric Code</span></dt>
+        <dd>
+            <span>{{currency.numericCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.currency.minorUnit">Minor Unit</span></dt>
+        <dd>
+            <span>{{currency.minorUnit}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.currency.symbol">Symbol</span></dt>
+        <dd>
+            <span>{{currency.symbol}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.currency.activated">Activated</span></dt>
+        <dd>
+            <span>{{currency.activated}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'currency-invoice/'+ currency.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

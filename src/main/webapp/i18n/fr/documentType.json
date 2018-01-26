@@ -1,0 +1,10 @@
+{
+    "invoiceappApp": {
+        "DocumentType" : {
+            "null": "",
+            "TENANT_LOGO": "TENANT_LOGO",
+            "INVOICE": "INVOICE",
+            "QUOTATION": "QUOTATION"
+        }
+    }
+}

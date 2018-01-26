@@ -1,0 +1,48 @@
+
+<div *ngIf="event">
+    <h2><span jhiTranslate="invoiceappApp.event.detail.title">Event</span> {{event.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.event.slug">Slug</span></dt>
+        <dd>
+            <span>{{event.slug}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.event.name">Name</span></dt>
+        <dd>
+            <span>{{event.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.event.virtual">Virtual</span></dt>
+        <dd>
+            <span>{{event.virtual}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.event.startsOn">Starts On</span></dt>
+        <dd>
+            <span>{{event.startsOn | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.event.endsOn">Ends On</span></dt>
+        <dd>
+            <span>{{event.endsOn | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.event.tenant">Tenant</span></dt>
+        <dd>
+            <div *ngIf="event.tenantId">
+                <a [routerLink]="['/tenant-invoice', event.tenantId]">{{event.tenantName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'event-invoice/'+ event.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

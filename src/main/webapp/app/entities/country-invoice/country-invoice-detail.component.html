@@ -1,0 +1,78 @@
+
+<div *ngIf="country">
+    <h2><span jhiTranslate="invoiceappApp.country.detail.title">Country</span> {{country.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.country.iso2">Iso 2</span></dt>
+        <dd>
+            <span>{{country.iso2}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.iso3">Iso 3</span></dt>
+        <dd>
+            <span>{{country.iso3}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.m49">M 49</span></dt>
+        <dd>
+            <span>{{country.m49}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.name">Name</span></dt>
+        <dd>
+            <span>{{country.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.officialNameEn">Official Name En</span></dt>
+        <dd>
+            <span>{{country.officialNameEn}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.officialNameFr">Official Name Fr</span></dt>
+        <dd>
+            <span>{{country.officialNameFr}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.dial">Dial</span></dt>
+        <dd>
+            <span>{{country.dial}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.continent">Continent</span></dt>
+        <dd>
+            <span jhiTranslate="{{'invoiceappApp.Continent.' + country.continent}}">{{country.continent}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.tld">Tld</span></dt>
+        <dd>
+            <span>{{country.tld}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.flag32">Flag 32</span></dt>
+        <dd>
+            <span>{{country.flag32}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.flag128">Flag 128</span></dt>
+        <dd>
+            <span>{{country.flag128}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.latitude">Latitude</span></dt>
+        <dd>
+            <span>{{country.latitude}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.longitude">Longitude</span></dt>
+        <dd>
+            <span>{{country.longitude}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.country.zoom">Zoom</span></dt>
+        <dd>
+            <span>{{country.zoom}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'country-invoice/'+ country.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

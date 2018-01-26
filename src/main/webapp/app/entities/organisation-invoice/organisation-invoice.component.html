@@ -1,0 +1,96 @@
+<div>
+    <h2>
+        <span jhiTranslate="invoiceappApp.organisation.home.title">Organisations</span>
+        <button class="btn btn-primary float-right jh-create-entity create-organisation-invoice" [routerLink]="['/', { outlets: { popup: ['organisation-invoice-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="invoiceappApp.organisation.home.createLabel">
+            Create new Organisation
+            </span>
+        </button>
+    </h2>
+    <inv-alert></inv-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="organisations">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="slug"><span jhiTranslate="invoiceappApp.organisation.slug">Slug</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="name"><span jhiTranslate="invoiceappApp.organisation.name">Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="businessIdentification"><span jhiTranslate="invoiceappApp.organisation.businessIdentification">Business Identification</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="corporateName"><span jhiTranslate="invoiceappApp.organisation.corporateName">Corporate Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="vatIdentification"><span jhiTranslate="invoiceappApp.organisation.vatIdentification">Vat Identification</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="activated"><span jhiTranslate="invoiceappApp.organisation.activated">Activated</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="createdOn"><span jhiTranslate="invoiceappApp.organisation.createdOn">Created On</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="addressId"><span jhiTranslate="invoiceappApp.organisation.address">Address</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="contactLastName"><span jhiTranslate="invoiceappApp.organisation.contact">Contact</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenantName"><span jhiTranslate="invoiceappApp.organisation.tenant">Tenant</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let organisation of organisations ;trackBy: trackId">
+                <td><a [routerLink]="['../organisation-invoice', organisation.id ]">{{organisation.id}}</a></td>
+                <td>{{organisation.slug}}</td>
+                <td>{{organisation.name}}</td>
+                <td>{{organisation.businessIdentification}}</td>
+                <td>{{organisation.corporateName}}</td>
+                <td>{{organisation.vatIdentification}}</td>
+                <td>{{organisation.activated}}</td>
+                <td>{{organisation.createdOn | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="organisation.addressId">
+                        <a [routerLink]="['../address-invoice', organisation.addressId  ]" >{{organisation.addressId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="organisation.contactId">
+                        <a [routerLink]="['../contact-invoice', organisation.contactId  ]" >{{organisation.contactLastName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="organisation.tenantId">
+                        <a [routerLink]="['../tenant-invoice', organisation.tenantId  ]" >{{organisation.tenantName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../organisation-invoice', organisation.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'organisation-invoice/'+ organisation.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'organisation-invoice/'+ organisation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="organisations && organisations.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

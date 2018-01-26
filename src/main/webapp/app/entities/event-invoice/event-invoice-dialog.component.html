@@ -1,0 +1,97 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myEventLabel" jhiTranslate="invoiceappApp.event.home.createOrEditLabel">Create or edit a Event</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <inv-alert-error></inv-alert-error>
+        <div class="form-group" [hidden]="!event.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="event.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.event.slug" for="field_slug">Slug</label>
+            <input type="text" class="form-control" name="slug" id="field_slug"
+                [(ngModel)]="event.slug" required minlength="1" maxlength="15"/>
+            <div [hidden]="!(editForm.controls.slug?.dirty && editForm.controls.slug?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.slug?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.slug?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 1 }">
+                   This field is required to be at least 1 characters.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.slug?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 15 }">
+                   This field cannot be longer than 15 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.event.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="event.name" required maxlength="50"/>
+            <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.name?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                   This field cannot be longer than 50 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.event.virtual" for="field_virtual">Virtual</label>
+            <input type="checkbox" class="form-control" name="virtual" id="field_virtual"
+                [(ngModel)]="event.virtual" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.event.startsOn" for="field_startsOn">Starts On</label>
+            <div class="input-group">
+                <input id="field_startsOn" type="text" class="form-control" name="startsOn" ngbDatepicker  #startsOnDp="ngbDatepicker" [(ngModel)]="event.startsOn"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="startsOnDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.event.endsOn" for="field_endsOn">Ends On</label>
+            <div class="input-group">
+                <input id="field_endsOn" type="text" class="form-control" name="endsOn" ngbDatepicker  #endsOnDp="ngbDatepicker" [(ngModel)]="event.endsOn"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="endsOnDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.event.tenant" for="field_tenant">Tenant</label>
+            <select class="form-control" id="field_tenant" name="tenant" [(ngModel)]="event.tenantId"  required>
+                <option *ngIf="!editForm.value.tenant" [ngValue]="null" selected></option>
+                <option [ngValue]="tenantOption.id" *ngFor="let tenantOption of tenants; trackBy: trackTenantById">{{tenantOption.name}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.tenant?.dirty && editForm.controls.tenant?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.tenant?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

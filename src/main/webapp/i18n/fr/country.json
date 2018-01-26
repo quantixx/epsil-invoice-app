@@ -1,0 +1,34 @@
+{
+    "invoiceappApp": {
+        "country" : {
+            "home": {
+                "title": "Countries",
+                "createLabel": "Créer un nouveau Country",
+                "createOrEditLabel": "Créer ou éditer un Country"
+            },
+            "created": "Un nouveau Country a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Country avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Country avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Country {{ id }} ?"
+            },
+            "detail": {
+                "title": "Country"
+            },
+            "iso2": "Iso 2",
+            "iso3": "Iso 3",
+            "m49": "M 49",
+            "name": "Name",
+            "officialNameEn": "Official Name En",
+            "officialNameFr": "Official Name Fr",
+            "dial": "Dial",
+            "continent": "Continent",
+            "tld": "Tld",
+            "flag32": "Flag 32",
+            "flag128": "Flag 128",
+            "latitude": "Latitude",
+            "longitude": "Longitude",
+            "zoom": "Zoom"
+        }
+    }
+}

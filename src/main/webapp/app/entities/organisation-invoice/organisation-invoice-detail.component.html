@@ -1,0 +1,68 @@
+
+<div *ngIf="organisation">
+    <h2><span jhiTranslate="invoiceappApp.organisation.detail.title">Organisation</span> {{organisation.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.organisation.slug">Slug</span></dt>
+        <dd>
+            <span>{{organisation.slug}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.organisation.name">Name</span></dt>
+        <dd>
+            <span>{{organisation.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.organisation.businessIdentification">Business Identification</span></dt>
+        <dd>
+            <span>{{organisation.businessIdentification}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.organisation.corporateName">Corporate Name</span></dt>
+        <dd>
+            <span>{{organisation.corporateName}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.organisation.vatIdentification">Vat Identification</span></dt>
+        <dd>
+            <span>{{organisation.vatIdentification}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.organisation.activated">Activated</span></dt>
+        <dd>
+            <span>{{organisation.activated}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.organisation.createdOn">Created On</span></dt>
+        <dd>
+            <span>{{organisation.createdOn | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.organisation.address">Address</span></dt>
+        <dd>
+            <div *ngIf="organisation.addressId">
+                <a [routerLink]="['/address-invoice', organisation.addressId]">{{organisation.addressId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.organisation.contact">Contact</span></dt>
+        <dd>
+            <div *ngIf="organisation.contactId">
+                <a [routerLink]="['/contact-invoice', organisation.contactId]">{{organisation.contactLastName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.organisation.tenant">Tenant</span></dt>
+        <dd>
+            <div *ngIf="organisation.tenantId">
+                <a [routerLink]="['/tenant-invoice', organisation.tenantId]">{{organisation.tenantName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'organisation-invoice/'+ organisation.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

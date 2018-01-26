@@ -1,0 +1,40 @@
+{
+    "invoiceappApp": {
+        "tenant" : {
+            "home": {
+                "title": "Tenants",
+                "createLabel": "Create a new Tenant",
+                "createOrEditLabel": "Create or edit a Tenant"
+            },
+            "created": "A new Tenant is created with identifier {{ param }}",
+            "updated": "A Tenant is updated with identifier {{ param }}",
+            "deleted": "A Tenant is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tenant {{ id }}?"
+            },
+            "detail": {
+                "title": "Tenant"
+            },
+            "slug": "Slug",
+            "name": "Name",
+            "companyName": "Company Name",
+            "description": "Description",
+            "vatIdentification": "Vat Identification",
+            "businessIdentification": "Business Identification",
+            "businessRegistry": "Business Registry",
+            "businessCode": "Business Code",
+            "financialYearFrom": "Financial Year From",
+            "financialYearTo": "Financial Year To",
+            "invoiceAddress": "Invoice Address",
+            "bank": "Bank",
+            "logo": "Logo",
+            "contact": "Contact",
+            "events": "Events",
+            "invoices": "Invoices",
+            "invoiceDefinitions": "Invoice Definitions",
+            "quotations": "Quotations",
+            "quotationDefinitions": "Quotation Definitions",
+            "families": "Families"
+        }
+    }
+}

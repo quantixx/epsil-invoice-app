@@ -1,0 +1,46 @@
+{
+    "invoiceappApp": {
+        "invoice" : {
+            "home": {
+                "title": "Invoices",
+                "createLabel": "Créer un nouveau Invoice",
+                "createOrEditLabel": "Créer ou éditer un Invoice"
+            },
+            "created": "Un nouveau Invoice a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Invoice avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Invoice avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Invoice {{ id }} ?"
+            },
+            "detail": {
+                "title": "Invoice"
+            },
+            "title": "Title",
+            "description": "Description",
+            "docType": "Doc Type",
+            "vatRate": "Vat Rate",
+            "terms": "Terms",
+            "penalties": "Penalties",
+            "number": "Number",
+            "invoiceType": "Invoice Type",
+            "poNumber": "Po Number",
+            "subTotalBeforeDiscount": "Sub Total Before Discount",
+            "discountRate": "Discount Rate",
+            "discountAmount": "Discount Amount",
+            "subTotal": "Sub Total",
+            "vatAmount": "Vat Amount",
+            "total": "Total",
+            "additionalInformation": "Additional Information",
+            "linked": "Linked",
+            "organisation": "Organisation",
+            "quotation": "Quotation",
+            "document": "Document",
+            "states": "States",
+            "lines": "Lines",
+            "language": "Language",
+            "currency": "Currency",
+            "family": "Family",
+            "tenant": "Tenant"
+        }
+    }
+}

@@ -1,0 +1,42 @@
+
+<div *ngIf="sequence">
+    <h2><span jhiTranslate="invoiceappApp.sequence.detail.title">Sequence</span> {{sequence.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.sequence.docType">Doc Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'invoiceappApp.DocumentType.' + sequence.docType}}">{{sequence.docType}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.sequence.next">Next</span></dt>
+        <dd>
+            <span>{{sequence.next}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.sequence.tenant">Tenant</span></dt>
+        <dd>
+            <div *ngIf="sequence.tenantId">
+                <a [routerLink]="['/tenant-invoice', sequence.tenantId]">{{sequence.tenantName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.sequence.family">Family</span></dt>
+        <dd>
+            <div *ngIf="sequence.familyId">
+                <a [routerLink]="['/family-invoice', sequence.familyId]">{{sequence.familyName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sequence-invoice/'+ sequence.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

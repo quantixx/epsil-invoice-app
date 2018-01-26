@@ -1,0 +1,46 @@
+
+<div *ngIf="language">
+    <h2><span jhiTranslate="invoiceappApp.language.detail.title">Language</span> {{language.id}}</h2>
+    <hr>
+    <inv-alert-error></inv-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="invoiceappApp.language.alpha3b">Alpha 3 B</span></dt>
+        <dd>
+            <span>{{language.alpha3b}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.language.alpha2">Alpha 2</span></dt>
+        <dd>
+            <span>{{language.alpha2}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.language.name">Name</span></dt>
+        <dd>
+            <span>{{language.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.language.flag32">Flag 32</span></dt>
+        <dd>
+            <span>{{language.flag32}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.language.flag128">Flag 128</span></dt>
+        <dd>
+            <span>{{language.flag128}}</span>
+        </dd>
+        <dt><span jhiTranslate="invoiceappApp.language.activated">Activated</span></dt>
+        <dd>
+            <span>{{language.activated}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'language-invoice/'+ language.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

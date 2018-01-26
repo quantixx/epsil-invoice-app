@@ -1,0 +1,24 @@
+{
+    "invoiceappApp": {
+        "family" : {
+            "home": {
+                "title": "Families",
+                "createLabel": "Créer un nouveau Family",
+                "createOrEditLabel": "Créer ou éditer un Family"
+            },
+            "created": "Un nouveau Family a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Family avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Family avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Family {{ id }} ?"
+            },
+            "detail": {
+                "title": "Family"
+            },
+            "slug": "Slug",
+            "name": "Name",
+            "description": "Description",
+            "tenant": "Tenant"
+        }
+    }
+}

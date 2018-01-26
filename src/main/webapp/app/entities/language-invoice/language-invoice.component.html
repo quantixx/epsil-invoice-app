@@ -1,0 +1,76 @@
+<div>
+    <h2>
+        <span jhiTranslate="invoiceappApp.language.home.title">Languages</span>
+        <button class="btn btn-primary float-right jh-create-entity create-language-invoice" [routerLink]="['/', { outlets: { popup: ['language-invoice-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="invoiceappApp.language.home.createLabel">
+            Create new Language
+            </span>
+        </button>
+    </h2>
+    <inv-alert></inv-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="languages">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="alpha3b"><span jhiTranslate="invoiceappApp.language.alpha3b">Alpha 3 B</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="alpha2"><span jhiTranslate="invoiceappApp.language.alpha2">Alpha 2</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="name"><span jhiTranslate="invoiceappApp.language.name">Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="flag32"><span jhiTranslate="invoiceappApp.language.flag32">Flag 32</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="flag128"><span jhiTranslate="invoiceappApp.language.flag128">Flag 128</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="activated"><span jhiTranslate="invoiceappApp.language.activated">Activated</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let language of languages ;trackBy: trackId">
+                <td><a [routerLink]="['../language-invoice', language.id ]">{{language.id}}</a></td>
+                <td>{{language.alpha3b}}</td>
+                <td>{{language.alpha2}}</td>
+                <td>{{language.name}}</td>
+                <td>{{language.flag32}}</td>
+                <td>{{language.flag128}}</td>
+                <td>{{language.activated}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../language-invoice', language.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'language-invoice/'+ language.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'language-invoice/'+ language.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="languages && languages.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,286 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myInvoiceLabel" jhiTranslate="invoiceappApp.invoice.home.createOrEditLabel">Create or edit a Invoice</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <inv-alert-error></inv-alert-error>
+        <div class="form-group" [hidden]="!invoice.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="invoice.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                [(ngModel)]="invoice.title" maxlength="50"/>
+            <div [hidden]="!(editForm.controls.title?.dirty && editForm.controls.title?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.title?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                   This field cannot be longer than 50 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                [(ngModel)]="invoice.description" maxlength="1024"/>
+            <div [hidden]="!(editForm.controls.description?.dirty && editForm.controls.description?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.description?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1024 }">
+                   This field cannot be longer than 1024 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.docType" for="field_docType">Doc Type</label>
+            <select class="form-control" name="docType" [(ngModel)]="invoice.docType" id="field_docType"  required>
+                <option value="TENANT_LOGO">{{'invoiceappApp.DocumentType.TENANT_LOGO' | translate}}</option>
+                <option value="INVOICE">{{'invoiceappApp.DocumentType.INVOICE' | translate}}</option>
+                <option value="QUOTATION">{{'invoiceappApp.DocumentType.QUOTATION' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.docType?.dirty && editForm.controls.docType?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.docType?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.vatRate" for="field_vatRate">Vat Rate</label>
+            <input type="number" class="form-control" name="vatRate" id="field_vatRate"
+                [(ngModel)]="invoice.vatRate" required/>
+            <div [hidden]="!(editForm.controls.vatRate?.dirty && editForm.controls.vatRate?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.vatRate?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.vatRate?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.terms" for="field_terms">Terms</label>
+            <input type="text" class="form-control" name="terms" id="field_terms"
+                [(ngModel)]="invoice.terms" required maxlength="32"/>
+            <div [hidden]="!(editForm.controls.terms?.dirty && editForm.controls.terms?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.terms?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.terms?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 32 }">
+                   This field cannot be longer than 32 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.penalties" for="field_penalties">Penalties</label>
+            <input type="text" class="form-control" name="penalties" id="field_penalties"
+                [(ngModel)]="invoice.penalties" required maxlength="512"/>
+            <div [hidden]="!(editForm.controls.penalties?.dirty && editForm.controls.penalties?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.penalties?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.penalties?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 512 }">
+                   This field cannot be longer than 512 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.number" for="field_number">Number</label>
+            <input type="text" class="form-control" name="number" id="field_number"
+                [(ngModel)]="invoice.number" required/>
+            <div [hidden]="!(editForm.controls.number?.dirty && editForm.controls.number?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.number?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.invoiceType" for="field_invoiceType">Invoice Type</label>
+            <select class="form-control" name="invoiceType" [(ngModel)]="invoice.invoiceType" id="field_invoiceType"  required>
+                <option value="INVOICE">{{'invoiceappApp.InvoiceType.INVOICE' | translate}}</option>
+                <option value="CREDIT_INVOICE">{{'invoiceappApp.InvoiceType.CREDIT_INVOICE' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.invoiceType?.dirty && editForm.controls.invoiceType?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.invoiceType?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.poNumber" for="field_poNumber">Po Number</label>
+            <input type="text" class="form-control" name="poNumber" id="field_poNumber"
+                [(ngModel)]="invoice.poNumber" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.subTotalBeforeDiscount" for="field_subTotalBeforeDiscount">Sub Total Before Discount</label>
+            <input type="number" class="form-control" name="subTotalBeforeDiscount" id="field_subTotalBeforeDiscount"
+                [(ngModel)]="invoice.subTotalBeforeDiscount" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.discountRate" for="field_discountRate">Discount Rate</label>
+            <input type="number" class="form-control" name="discountRate" id="field_discountRate"
+                [(ngModel)]="invoice.discountRate" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.discountAmount" for="field_discountAmount">Discount Amount</label>
+            <input type="number" class="form-control" name="discountAmount" id="field_discountAmount"
+                [(ngModel)]="invoice.discountAmount" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.subTotal" for="field_subTotal">Sub Total</label>
+            <input type="number" class="form-control" name="subTotal" id="field_subTotal"
+                [(ngModel)]="invoice.subTotal" required/>
+            <div [hidden]="!(editForm.controls.subTotal?.dirty && editForm.controls.subTotal?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.subTotal?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.subTotal?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.vatAmount" for="field_vatAmount">Vat Amount</label>
+            <input type="number" class="form-control" name="vatAmount" id="field_vatAmount"
+                [(ngModel)]="invoice.vatAmount" required/>
+            <div [hidden]="!(editForm.controls.vatAmount?.dirty && editForm.controls.vatAmount?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.vatAmount?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.vatAmount?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.total" for="field_total">Total</label>
+            <input type="number" class="form-control" name="total" id="field_total"
+                [(ngModel)]="invoice.total" required/>
+            <div [hidden]="!(editForm.controls.total?.dirty && editForm.controls.total?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.total?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.total?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.additionalInformation" for="field_additionalInformation">Additional Information</label>
+            <input type="text" class="form-control" name="additionalInformation" id="field_additionalInformation"
+                [(ngModel)]="invoice.additionalInformation" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.linked" for="field_linked">Linked</label>
+            <select class="form-control" id="field_linked" name="linked" [(ngModel)]="invoice.linkedId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="invoiceOption.id" *ngFor="let invoiceOption of linkeds; trackBy: trackInvoiceById">{{invoiceOption.number}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.organisation" for="field_organisation">Organisation</label>
+            <select class="form-control" id="field_organisation" name="organisation" [(ngModel)]="invoice.organisationId" required>
+                <option *ngIf="!editForm.value.organisation" [ngValue]="null" selected></option>
+                <option [ngValue]="organisationOption.id" *ngFor="let organisationOption of organisations; trackBy: trackOrganisationById">{{organisationOption.name}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.organisation?.dirty && editForm.controls.organisation?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.organisation?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.quotation" for="field_quotation">Quotation</label>
+            <select class="form-control" id="field_quotation" name="quotation" [(ngModel)]="invoice.quotationId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="quotationOption.id" *ngFor="let quotationOption of quotations; trackBy: trackQuotationById">{{quotationOption.number}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.document" for="field_document">Document</label>
+            <select class="form-control" id="field_document" name="document" [(ngModel)]="invoice.documentId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="documentOption.id" *ngFor="let documentOption of documents; trackBy: trackDocumentById">{{documentOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.language" for="field_language">Language</label>
+            <select class="form-control" id="field_language" name="language" [(ngModel)]="invoice.languageId"  required>
+                <option *ngIf="!editForm.value.language" [ngValue]="null" selected></option>
+                <option [ngValue]="languageOption.id" *ngFor="let languageOption of languages; trackBy: trackLanguageById">{{languageOption.name}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.language?.dirty && editForm.controls.language?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.language?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.currency" for="field_currency">Currency</label>
+            <select class="form-control" id="field_currency" name="currency" [(ngModel)]="invoice.currencyId"  required>
+                <option *ngIf="!editForm.value.currency" [ngValue]="null" selected></option>
+                <option [ngValue]="currencyOption.id" *ngFor="let currencyOption of currencies; trackBy: trackCurrencyById">{{currencyOption.currency}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.currency?.dirty && editForm.controls.currency?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.currency?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.family" for="field_family">Family</label>
+            <select class="form-control" id="field_family" name="family" [(ngModel)]="invoice.familyId"  required>
+                <option *ngIf="!editForm.value.family" [ngValue]="null" selected></option>
+                <option [ngValue]="familyOption.id" *ngFor="let familyOption of families; trackBy: trackFamilyById">{{familyOption.name}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.family?.dirty && editForm.controls.family?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.family?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="invoiceappApp.invoice.tenant" for="field_tenant">Tenant</label>
+            <select class="form-control" id="field_tenant" name="tenant" [(ngModel)]="invoice.tenantId"  required>
+                <option *ngIf="!editForm.value.tenant" [ngValue]="null" selected></option>
+                <option [ngValue]="tenantOption.id" *ngFor="let tenantOption of tenants; trackBy: trackTenantById">{{tenantOption.name}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.tenant?.dirty && editForm.controls.tenant?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.tenant?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
