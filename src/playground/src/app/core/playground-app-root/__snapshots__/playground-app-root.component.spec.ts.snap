@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration::PlaygroundAppRootComponent should create 1`] = `
+<epsil-playground-app-root>
+  
+  
+  <epsil-playground-navbar />
+  
+  
+  
+  <router-outlet>
+    
+  
+  </router-outlet>
+  
+  
+  
+</epsil-playground-app-root>
+`;

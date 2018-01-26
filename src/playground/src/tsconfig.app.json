@@ -1,0 +1,12 @@
+{
+    "extends": "../../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../../out-tsc/app",
+        "module": "es2015",
+        "types": ["node"],
+        "paths": {
+            "@epsil/*": ["epsil_modules/@epsil/*"]
+        }
+    },
+    "exclude": ["test.ts", "**/*.spec.ts"]
+}

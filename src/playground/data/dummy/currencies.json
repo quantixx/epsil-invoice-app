@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "entity": "AFGHANISTAN",
+    "currency": "Afghani",
+    "alphabeticCode": "AFN",
+    "numericCode": 971,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 2,
+    "entity": "ALAND ISLANDS",
+    "currency": "Euro",
+    "alphabeticCode": "EUR",
+    "numericCode": 978,
+    "minorUnit": 2,
+    "symbol": "€",
+    "activated": false
+  },
+  {
+    "id": 3,
+    "entity": "ALBANIA",
+    "currency": "Lek",
+    "alphabeticCode": "ALL",
+    "numericCode": 8,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 4,
+    "entity": "ALGERIA",
+    "currency": "Algerian Dinar",
+    "alphabeticCode": "DZD",
+    "numericCode": 12,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 5,
+    "entity": "AMERICAN SAMOA",
+    "currency": "US Dollar",
+    "alphabeticCode": "USD",
+    "numericCode": 840,
+    "minorUnit": 2,
+    "symbol": "$",
+    "activated": false
+  },
+  {
+    "id": 6,
+    "entity": "ANDORRA",
+    "currency": "Euro",
+    "alphabeticCode": "EUR",
+    "numericCode": 978,
+    "minorUnit": 2,
+    "symbol": "€",
+    "activated": false
+  },
+  {
+    "id": 7,
+    "entity": "ANGOLA",
+    "currency": "Kwanza",
+    "alphabeticCode": "AOA",
+    "numericCode": 973,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 8,
+    "entity": "ANGUILLA",
+    "currency": "East Caribbean Dollar",
+    "alphabeticCode": "XCD",
+    "numericCode": 951,
+    "minorUnit": 2,
+    "symbol": "$",
+    "activated": false
+  },
+  {
+    "id": 9,
+    "entity": "ANTIGUA AND BARBUDA",
+    "currency": "East Caribbean Dollar",
+    "alphabeticCode": "XCD",
+    "numericCode": 951,
+    "minorUnit": 2,
+    "symbol": "$",
+    "activated": false
+  },
+  {
+    "id": 10,
+    "entity": "ARGENTINA",
+    "currency": "Argentine Peso",
+    "alphabeticCode": "ARS",
+    "numericCode": 32,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 11,
+    "entity": "ARMENIA",
+    "currency": "Armenian Dram",
+    "alphabeticCode": "AMD",
+    "numericCode": 51,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 12,
+    "entity": "ARUBA",
+    "currency": "Aruban Florin",
+    "alphabeticCode": "AWG",
+    "numericCode": 533,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 13,
+    "entity": "AUSTRALIA",
+    "currency": "Australian Dollar",
+    "alphabeticCode": "AUD",
+    "numericCode": 36,
+    "minorUnit": 2,
+    "symbol": "$",
+    "activated": false
+  },
+  {
+    "id": 14,
+    "entity": "AUSTRIA",
+    "currency": "Euro",
+    "alphabeticCode": "EUR",
+    "numericCode": 978,
+    "minorUnit": 2,
+    "symbol": "€",
+    "activated": false
+  },
+  {
+    "id": 15,
+    "entity": "AZERBAIJAN",
+    "currency": "Azerbaijanian Manat",
+    "alphabeticCode": "AZN",
+    "numericCode": 944,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 16,
+    "entity": "BAHAMAS (THE)",
+    "currency": "Bahamian Dollar",
+    "alphabeticCode": "BSD",
+    "numericCode": 44,
+    "minorUnit": 2,
+    "symbol": "$",
+    "activated": false
+  },
+  {
+    "id": 17,
+    "entity": "BAHRAIN",
+    "currency": "Bahraini Dinar",
+    "alphabeticCode": "BHD",
+    "numericCode": 48,
+    "minorUnit": 3,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 18,
+    "entity": "BANGLADESH",
+    "currency": "Taka",
+    "alphabeticCode": "BDT",
+    "numericCode": 50,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  },
+  {
+    "id": 19,
+    "entity": "BARBADOS",
+    "currency": "Barbados Dollar",
+    "alphabeticCode": "BBD",
+    "numericCode": 52,
+    "minorUnit": 2,
+    "symbol": "$",
+    "activated": false
+  },
+  {
+    "id": 20,
+    "entity": "BELARUS",
+    "currency": "Belarusian Ruble",
+    "alphabeticCode": "BYN",
+    "numericCode": 933,
+    "minorUnit": 2,
+    "symbol": "",
+    "activated": false
+  }
+]

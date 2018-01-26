@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1251,
+    "slug": "spn",
+    "name": "Sponsor",
+    "description": "This family of invoices is only used for Sponsors",
+    "tenantId": 1101,
+    "tenantName": "Quantixx"
+  },
+  {
+    "id": 1252,
+    "slug": "reg",
+    "name": "Registration",
+    "description": "This family of invoices is only used for Registration",
+    "tenantId": 1101,
+    "tenantName": "Quantixx"
+  },
+  {
+    "id": 1253,
+    "slug": "other",
+    "name": "Other",
+    "description": "This family of invoices is used for all invoices except Sponsors and Registration",
+    "tenantId": 1101,
+    "tenantName": "Quantixx"
+  }
+]

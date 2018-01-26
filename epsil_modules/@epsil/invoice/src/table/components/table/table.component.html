@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Tenant</th>
+      <th scope="col">Family</th>
+      <th scope="col">Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let invoice of invoices; trackBy: trackId">
+      <th scope="row">{{ invoice.id }}</th>
+      <td>{{ invoice.title }}</td>
+      <td>{{ invoice.tenantName }}</td>
+      <td>{{ invoice.familyName }}</td>
+      <td>{{ invoice.languageName }}</td>
+    </tr>
+  </tbody>
+</table>

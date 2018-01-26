@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "name": "@epsil-invoice-ui/invoice",
+  "version": "1.0.0",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    },
+    "dest": "../../dist/invoice"
+  }
+}

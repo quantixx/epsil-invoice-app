@@ -1,0 +1,27 @@
+//
+
+$page-padding: 48px;
+$page-width: 794px;
+$content-width: $page-width - $page-padding;
+
+//
+
+:host {
+  display: block;
+}
+
+.table {
+  table-layout: fixed;
+}
+
+.author-section {
+  &__img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+}
+
+.client-section {
+  margin-top: 6rem;
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "alpha3b": "aar",
+    "alpha2": "aa",
+    "name": "Afar",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 2,
+    "alpha3b": "abk",
+    "alpha2": "ab",
+    "name": "Abkhazian",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 3,
+    "alpha3b": "afr",
+    "alpha2": "af",
+    "name": "Afrikaans",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 4,
+    "alpha3b": "aka",
+    "alpha2": "ak",
+    "name": "Akan",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 5,
+    "alpha3b": "alb",
+    "alpha2": "sq",
+    "name": "Albanian",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 6,
+    "alpha3b": "amh",
+    "alpha2": "am",
+    "name": "Amharic",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 7,
+    "alpha3b": "ara",
+    "alpha2": "ar",
+    "name": "Arabic",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 8,
+    "alpha3b": "arg",
+    "alpha2": "an",
+    "name": "Aragonese",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 9,
+    "alpha3b": "arm",
+    "alpha2": "hy",
+    "name": "Armenian",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 10,
+    "alpha3b": "asm",
+    "alpha2": "as",
+    "name": "Assamese",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 11,
+    "alpha3b": "ava",
+    "alpha2": "av",
+    "name": "Avaric",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 12,
+    "alpha3b": "ave",
+    "alpha2": "ae",
+    "name": "Avestan",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 13,
+    "alpha3b": "aym",
+    "alpha2": "ay",
+    "name": "Aymara",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 14,
+    "alpha3b": "aze",
+    "alpha2": "az",
+    "name": "Azerbaijani",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 15,
+    "alpha3b": "bak",
+    "alpha2": "ba",
+    "name": "Bashkir",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 16,
+    "alpha3b": "bam",
+    "alpha2": "bm",
+    "name": "Bambara",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 17,
+    "alpha3b": "baq",
+    "alpha2": "eu",
+    "name": "Basque",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 18,
+    "alpha3b": "bel",
+    "alpha2": "be",
+    "name": "Belarusian",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 19,
+    "alpha3b": "ben",
+    "alpha2": "bn",
+    "name": "Bengali",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  },
+  {
+    "id": 20,
+    "alpha3b": "bih",
+    "alpha2": "bh",
+    "name": "Bihari languages",
+    "flag32": "",
+    "flag128": "",
+    "activated": false
+  }
+]

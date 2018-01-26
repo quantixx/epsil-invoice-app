@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1101,
+    "slug": "quantixx",
+    "name": "Quantixx",
+    "companyName": "Quantixx SARL",
+    "description": null,
+    "vatIdentification": "AU12 1234 1234 1234",
+    "businessIdentification": null,
+    "businessRegistry": null,
+    "businessCode": null,
+    "businessAdditionalInformation": "SARL au capital de 3 000 euros",
+    "invoiceAddress": {
+      "id": 953,
+      "street": "Blue Flower",
+      "street2": null,
+      "city": "Huluru",
+      "state": "CA",
+      "zipCode": "12345",
+      "additionalInformation": null,
+      "countryId": 12,
+      "countryName": "Australia"
+    },
+    "bank": {
+      "id": 1001,
+      "bankName": "Osie Bank",
+      "agencyName": "Perth Central",
+      "bankAccount": "1234 1234 1234",
+      "iban": "AU99 1234 1234 1234 1234 1234 1234",
+      "bic": "FYTEBCDK",
+      "phoneArea": "+41",
+      "phoneNumber": "1234567",
+      "addressId": 951
+    },
+    "logoId": null,
+    "logoName": null,
+    "contact":   {
+      "id": 1052,
+      "firstName": "John",
+      "lastName": "Atoak",
+      "activated": true,
+      "email": "john@oak.com",
+      "phoneArea": "+33",
+      "phoneNumber": "09 87 65 43 32"
+    }
+  }
+]

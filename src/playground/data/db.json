@@ -1,0 +1,1048 @@
+{
+  "addresses": [
+    {
+      "id": 951,
+      "street": "41 Kangourour Road",
+      "street2": null,
+      "city": "Perth",
+      "state": "WA",
+      "zipCode": "12345",
+      "additionalInformation": null,
+      "countryId": 12,
+      "countryName": "Australia"
+    },
+    {
+      "id": 952,
+      "street": "75 Sesame Street",
+      "street2": null,
+      "city": "Sydney",
+      "state": "EA",
+      "zipCode": "12345",
+      "additionalInformation": null,
+      "countryId": 12,
+      "countryName": "Australia"
+    },
+    {
+      "id": 953,
+      "street": "Blue Flower",
+      "street2": null,
+      "city": "Huluru",
+      "state": "CA",
+      "zipCode": "12345",
+      "additionalInformation": null,
+      "countryId": 12,
+      "countryName": "Australia"
+    }
+  ],
+  "banks": [
+    {
+      "id": 1001,
+      "bankName": "Osie Bank",
+      "agencyName": "Perth Central",
+      "bankAccount": "1234 1234 1234",
+      "iban": "AU99 1234 1234 1234 1234 1234 1234",
+      "bic": "FYTEBCDK",
+      "phoneArea": "+41",
+      "phoneNumber": "1234567",
+      "addressId": 951
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1051,
+      "firstName": "Peter",
+      "lastName": "Paul",
+      "activated": true,
+      "email": "peter@paul.com",
+      "phoneArea": "+33",
+      "phoneNumber": "6123123123"
+    },
+    {
+      "id": 1052,
+      "firstName": "John",
+      "lastName": "Atoak",
+      "activated": true,
+      "email": "john@oak.com",
+      "phoneArea": null,
+      "phoneNumber": null
+    }
+  ],
+  "countries": [
+    {
+      "id": 1,
+      "iso2": "AD",
+      "iso3": "AND",
+      "m49": 20,
+      "name": "Andorra",
+      "officialNameEn": "Andorra",
+      "officialNameFr": "Andorre",
+      "dial": "376",
+      "continent": "EU",
+      "tld": ".ad",
+      "flag32": "AD-32.png",
+      "flag128": "AD-128.png",
+      "latitude": "42.54057088",
+      "longitude": "1.55201340",
+      "zoom": 11
+    },
+    {
+      "id": 2,
+      "iso2": "AE",
+      "iso3": "ARE",
+      "m49": 784,
+      "name": "United Arab Emirates",
+      "officialNameEn": "United Arab Emirates",
+      "officialNameFr": "Émirats arabes unis",
+      "dial": "971",
+      "continent": "AS",
+      "tld": ".ae",
+      "flag32": "AE-32.png",
+      "flag128": "AE-128.png",
+      "latitude": "24.64324405",
+      "longitude": "53.62261227",
+      "zoom": 7
+    },
+    {
+      "id": 3,
+      "iso2": "AF",
+      "iso3": "AFG",
+      "m49": 4,
+      "name": "Afghanistan",
+      "officialNameEn": "Afghanistan",
+      "officialNameFr": "Afghanistan",
+      "dial": "93",
+      "continent": "AS",
+      "tld": ".af",
+      "flag32": "AF-32.png",
+      "flag128": "AF-128.png",
+      "latitude": "33.98299275",
+      "longitude": "66.39159363",
+      "zoom": 6
+    },
+    {
+      "id": 4,
+      "iso2": "AG",
+      "iso3": "ATG",
+      "m49": 28,
+      "name": "Antigua & Barbuda",
+      "officialNameEn": "Antigua and Barbuda",
+      "officialNameFr": "Antigua-et-Barbuda",
+      "dial": "1-268",
+      "continent": "NA",
+      "tld": ".ag",
+      "flag32": "AG-32.png",
+      "flag128": "AG-128.png",
+      "latitude": "17.48060423",
+      "longitude": "-61.42014426",
+      "zoom": 9
+    },
+    {
+      "id": 5,
+      "iso2": "AI",
+      "iso3": "AIA",
+      "m49": 660,
+      "name": "Anguilla",
+      "officialNameEn": "Anguilla",
+      "officialNameFr": "Anguilla",
+      "dial": "1-264",
+      "continent": "NA",
+      "tld": ".ai",
+      "flag32": "AI-32.png",
+      "flag128": "AI-128.png",
+      "latitude": "18.22053521",
+      "longitude": "-63.06861300",
+      "zoom": 12
+    },
+    {
+      "id": 6,
+      "iso2": "AL",
+      "iso3": "ALB",
+      "m49": 8,
+      "name": "Albania",
+      "officialNameEn": "Albania",
+      "officialNameFr": "Albanie",
+      "dial": "355",
+      "continent": "EU",
+      "tld": ".al",
+      "flag32": "AL-32.png",
+      "flag128": "AL-128.png",
+      "latitude": "41.00017358",
+      "longitude": "19.87170014",
+      "zoom": 7
+    },
+    {
+      "id": 7,
+      "iso2": "AM",
+      "iso3": "ARM",
+      "m49": 51,
+      "name": "Armenia",
+      "officialNameEn": "Armenia",
+      "officialNameFr": "Arménie",
+      "dial": "374",
+      "continent": "AS",
+      "tld": ".am",
+      "flag32": "AM-32.png",
+      "flag128": "AM-128.png",
+      "latitude": "40.13475528",
+      "longitude": "45.01072318",
+      "zoom": 7
+    },
+    {
+      "id": 8,
+      "iso2": "AO",
+      "iso3": "AGO",
+      "m49": 24,
+      "name": "Angola",
+      "officialNameEn": "Angola",
+      "officialNameFr": "Angola",
+      "dial": "244",
+      "continent": "AF",
+      "tld": ".ao",
+      "flag32": "AO-32.png",
+      "flag128": "AO-128.png",
+      "latitude": "-12.16469683",
+      "longitude": "16.70933622",
+      "zoom": 6
+    },
+    {
+      "id": 9,
+      "iso2": "AR",
+      "iso3": "ARG",
+      "m49": 32,
+      "name": "Argentina",
+      "officialNameEn": "Argentina",
+      "officialNameFr": "Argentine",
+      "dial": "54",
+      "continent": "SA",
+      "tld": ".ar",
+      "flag32": "AR-32.png",
+      "flag128": "AR-128.png",
+      "latitude": "-38.01529308",
+      "longitude": "-64.97897469",
+      "zoom": 4
+    },
+    {
+      "id": 10,
+      "iso2": "AS",
+      "iso3": "ASM",
+      "m49": 16,
+      "name": "American Samoa",
+      "officialNameEn": "American Samoa",
+      "officialNameFr": "Samoa américaines",
+      "dial": "1-684",
+      "continent": "OC",
+      "tld": ".as",
+      "flag32": "AS-32.png",
+      "flag128": "AS-128.png",
+      "latitude": "-14.30634641",
+      "longitude": "-170.69501750",
+      "zoom": 11
+    },
+    {
+      "id": 11,
+      "iso2": "AT",
+      "iso3": "AUT",
+      "m49": 40,
+      "name": "Austria",
+      "officialNameEn": "Austria",
+      "officialNameFr": "Autriche",
+      "dial": "43",
+      "continent": "EU",
+      "tld": ".at",
+      "flag32": "AT-32.png",
+      "flag128": "AT-128.png",
+      "latitude": "47.63125476",
+      "longitude": "13.18776731",
+      "zoom": 7
+    },
+    {
+      "id": 12,
+      "iso2": "AU",
+      "iso3": "AUS",
+      "m49": 36,
+      "name": "Australia",
+      "officialNameEn": "Australia",
+      "officialNameFr": "Australie",
+      "dial": "61",
+      "continent": "OC",
+      "tld": ".au",
+      "flag32": "AU-32.png",
+      "flag128": "AU-128.png",
+      "latitude": "-26.29594646",
+      "longitude": "133.55540944",
+      "zoom": 4
+    },
+    {
+      "id": 13,
+      "iso2": "AW",
+      "iso3": "ABW",
+      "m49": 533,
+      "name": "Aruba",
+      "officialNameEn": "Aruba",
+      "officialNameFr": "Aruba",
+      "dial": "297",
+      "continent": "NA",
+      "tld": ".aw",
+      "flag32": "AW-32.png",
+      "flag128": "AW-128.png",
+      "latitude": "12.52109661",
+      "longitude": "-69.96833800",
+      "zoom": 12
+    },
+    {
+      "id": 14,
+      "iso2": "AZ",
+      "iso3": "AZE",
+      "m49": 31,
+      "name": "Azerbaijan",
+      "officialNameEn": "Azerbaijan",
+      "officialNameFr": "Azerbaïdjan",
+      "dial": "994",
+      "continent": "AS",
+      "tld": ".az",
+      "flag32": "AZ-32.png",
+      "flag128": "AZ-128.png",
+      "latitude": "40.35321757",
+      "longitude": "47.46706372",
+      "zoom": 7
+    },
+    {
+      "id": 15,
+      "iso2": "BA",
+      "iso3": "BIH",
+      "m49": 70,
+      "name": "Bosnia",
+      "officialNameEn": "Bosnia and Herzegovina",
+      "officialNameFr": "Bosnie-Herzégovine",
+      "dial": "387",
+      "continent": "EU",
+      "tld": ".ba",
+      "flag32": "BA-32.png",
+      "flag128": "BA-128.png",
+      "latitude": "44.00040856",
+      "longitude": "17.81640910",
+      "zoom": 7
+    },
+    {
+      "id": 16,
+      "iso2": "BB",
+      "iso3": "BRB",
+      "m49": 52,
+      "name": "Barbados",
+      "officialNameEn": "Barbados",
+      "officialNameFr": "Barbade",
+      "dial": "1-246",
+      "continent": "NA",
+      "tld": ".bb",
+      "flag32": "BB-32.png",
+      "flag128": "BB-128.png",
+      "latitude": "13.19383077",
+      "longitude": "-59.54319600",
+      "zoom": 11
+    },
+    {
+      "id": 17,
+      "iso2": "BD",
+      "iso3": "BGD",
+      "m49": 50,
+      "name": "Bangladesh",
+      "officialNameEn": "Bangladesh",
+      "officialNameFr": "Bangladesh",
+      "dial": "880",
+      "continent": "AS",
+      "tld": ".bd",
+      "flag32": "BD-32.png",
+      "flag128": "BD-128.png",
+      "latitude": "24.08273251",
+      "longitude": "90.49915527",
+      "zoom": 7
+    },
+    {
+      "id": 18,
+      "iso2": "BE",
+      "iso3": "BEL",
+      "m49": 56,
+      "name": "Belgium",
+      "officialNameEn": "Belgium",
+      "officialNameFr": "Belgique",
+      "dial": "32",
+      "continent": "EU",
+      "tld": ".be",
+      "flag32": "BE-32.png",
+      "flag128": "BE-128.png",
+      "latitude": "50.49593874",
+      "longitude": "4.46993600",
+      "zoom": 8
+    },
+    {
+      "id": 19,
+      "iso2": "BF",
+      "iso3": "BFA",
+      "m49": 854,
+      "name": "Burkina Faso",
+      "officialNameEn": "Burkina Faso",
+      "officialNameFr": "Burkina Faso",
+      "dial": "226",
+      "continent": "AF",
+      "tld": ".bf",
+      "flag32": "BF-32.png",
+      "flag128": "BF-128.png",
+      "latitude": "12.22492458",
+      "longitude": "-1.56159100",
+      "zoom": 7
+    },
+    {
+      "id": 20,
+      "iso2": "BG",
+      "iso3": "BGR",
+      "m49": 100,
+      "name": "Bulgaria",
+      "officialNameEn": "Bulgaria",
+      "officialNameFr": "Bulgarie",
+      "dial": "359",
+      "continent": "EU",
+      "tld": ".bg",
+      "flag32": "BG-32.png",
+      "flag128": "BG-128.png",
+      "latitude": "42.70160678",
+      "longitude": "25.48583200",
+      "zoom": 7
+    }
+  ],
+  "currencies": [
+    {
+      "id": 1,
+      "entity": "AFGHANISTAN",
+      "currency": "Afghani",
+      "alphabeticCode": "AFN",
+      "numericCode": 971,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 2,
+      "entity": "ALAND ISLANDS",
+      "currency": "Euro",
+      "alphabeticCode": "EUR",
+      "numericCode": 978,
+      "minorUnit": 2,
+      "symbol": "€",
+      "activated": false
+    },
+    {
+      "id": 3,
+      "entity": "ALBANIA",
+      "currency": "Lek",
+      "alphabeticCode": "ALL",
+      "numericCode": 8,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 4,
+      "entity": "ALGERIA",
+      "currency": "Algerian Dinar",
+      "alphabeticCode": "DZD",
+      "numericCode": 12,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 5,
+      "entity": "AMERICAN SAMOA",
+      "currency": "US Dollar",
+      "alphabeticCode": "USD",
+      "numericCode": 840,
+      "minorUnit": 2,
+      "symbol": "$",
+      "activated": false
+    },
+    {
+      "id": 6,
+      "entity": "ANDORRA",
+      "currency": "Euro",
+      "alphabeticCode": "EUR",
+      "numericCode": 978,
+      "minorUnit": 2,
+      "symbol": "€",
+      "activated": false
+    },
+    {
+      "id": 7,
+      "entity": "ANGOLA",
+      "currency": "Kwanza",
+      "alphabeticCode": "AOA",
+      "numericCode": 973,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 8,
+      "entity": "ANGUILLA",
+      "currency": "East Caribbean Dollar",
+      "alphabeticCode": "XCD",
+      "numericCode": 951,
+      "minorUnit": 2,
+      "symbol": "$",
+      "activated": false
+    },
+    {
+      "id": 9,
+      "entity": "ANTIGUA AND BARBUDA",
+      "currency": "East Caribbean Dollar",
+      "alphabeticCode": "XCD",
+      "numericCode": 951,
+      "minorUnit": 2,
+      "symbol": "$",
+      "activated": false
+    },
+    {
+      "id": 10,
+      "entity": "ARGENTINA",
+      "currency": "Argentine Peso",
+      "alphabeticCode": "ARS",
+      "numericCode": 32,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 11,
+      "entity": "ARMENIA",
+      "currency": "Armenian Dram",
+      "alphabeticCode": "AMD",
+      "numericCode": 51,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 12,
+      "entity": "ARUBA",
+      "currency": "Aruban Florin",
+      "alphabeticCode": "AWG",
+      "numericCode": 533,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 13,
+      "entity": "AUSTRALIA",
+      "currency": "Australian Dollar",
+      "alphabeticCode": "AUD",
+      "numericCode": 36,
+      "minorUnit": 2,
+      "symbol": "$",
+      "activated": false
+    },
+    {
+      "id": 14,
+      "entity": "AUSTRIA",
+      "currency": "Euro",
+      "alphabeticCode": "EUR",
+      "numericCode": 978,
+      "minorUnit": 2,
+      "symbol": "€",
+      "activated": false
+    },
+    {
+      "id": 15,
+      "entity": "AZERBAIJAN",
+      "currency": "Azerbaijanian Manat",
+      "alphabeticCode": "AZN",
+      "numericCode": 944,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 16,
+      "entity": "BAHAMAS (THE)",
+      "currency": "Bahamian Dollar",
+      "alphabeticCode": "BSD",
+      "numericCode": 44,
+      "minorUnit": 2,
+      "symbol": "$",
+      "activated": false
+    },
+    {
+      "id": 17,
+      "entity": "BAHRAIN",
+      "currency": "Bahraini Dinar",
+      "alphabeticCode": "BHD",
+      "numericCode": 48,
+      "minorUnit": 3,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 18,
+      "entity": "BANGLADESH",
+      "currency": "Taka",
+      "alphabeticCode": "BDT",
+      "numericCode": 50,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    },
+    {
+      "id": 19,
+      "entity": "BARBADOS",
+      "currency": "Barbados Dollar",
+      "alphabeticCode": "BBD",
+      "numericCode": 52,
+      "minorUnit": 2,
+      "symbol": "$",
+      "activated": false
+    },
+    {
+      "id": 20,
+      "entity": "BELARUS",
+      "currency": "Belarusian Ruble",
+      "alphabeticCode": "BYN",
+      "numericCode": 933,
+      "minorUnit": 2,
+      "symbol": "",
+      "activated": false
+    }
+  ],
+  "events": [
+    {
+      "id": 1151,
+      "slug": "devfr",
+      "name": "Devoxx France",
+      "virtual": false,
+      "startsOn": null,
+      "endsOn": null,
+      "tenantId": 1101,
+      "tenantName": "Quantixx"
+    }
+  ],
+  "families": [
+    {
+      "id": 1251,
+      "slug": "spn",
+      "name": "Sponsor",
+      "description": "This family of invoices is only used for Sponsors",
+      "tenantId": 1101,
+      "tenantName": "Quantixx"
+    },
+    {
+      "id": 1252,
+      "slug": "reg",
+      "name": "Registration",
+      "description": "This family of invoices is only used for Registration",
+      "tenantId": 1101,
+      "tenantName": "Quantixx"
+    },
+    {
+      "id": 1253,
+      "slug": "other",
+      "name": "Other",
+      "description": "This family of invoices is used for all invoices except Sponsors and Registration",
+      "tenantId": 1101,
+      "tenantName": "Quantixx"
+    }
+  ],
+  "invoice-definitions": [
+    {
+      "id": 1301,
+      "title": "Invoice definition for common invoices",
+      "description": null,
+      "docType": "INVOICE",
+      "terms": "30 days after the end of the mon",
+      "penalties": "20% penalties after 30 days of not paying the invoice",
+      "family": {
+        "id": 1251,
+        "slug": "spn",
+        "name": "Sponsor",
+        "colour": "#4286f4"
+      },
+      "languageId": 17,
+      "languageName": "Basque",
+      "vatRate": 20,
+      "vatRates": [
+        0,
+        5.5,
+        7.5,
+        10,
+        20
+      ],
+      "tenantId": 1101,
+      "tenantName": "Quantixx"
+    }
+  ],
+  "invoices": [
+    {
+      "id": 1301,
+      "number": "spn_123456",
+      "title": "Invoice definition for common invoices",
+      "description": null,
+      "docType": "INVOICE",
+      "invoiceType": "INVOICE",
+      "terms": "30 days after the end of the mon",
+      "penalties": "20% penalties after 30 days of not paying the invoice",
+      "additionalInformation": "nothing special",
+      "poNumber": "PO #345678",
+      "vatRate": 20,
+      "subTotalBeforeDiscount": null,
+      "discountRate": null,
+      "discountAmount": null,
+      "subTotal": 12,
+      "vatAmount": 23,
+      "total": 345,
+      "family": {
+        "id": 1251,
+        "slug": "spn",
+        "name": "Sponsor",
+        "colour": "#4286f4"
+      },
+      "organisation": {
+        "id": 1201,
+        "slug": "oak",
+        "name": "Oak",
+        "businessIdentification": "AU 1234 0976 8765",
+        "corporateName": "Oak Incorporation",
+        "vatIdentification": "AU3456789",
+        "address": {
+          "id": 951,
+          "street": "41 Kangourour Road",
+          "street2": null,
+          "city": "Perth",
+          "state": "WA",
+          "zipCode": "12345",
+          "countryId": 12,
+          "countryName": "Australia"
+        },
+        "contact": {
+          "id": 1051,
+          "firstName": "Peter",
+          "lastName": "Paul",
+          "email": "peter@paul.com",
+          "phoneArea": "+33",
+          "phoneNumber": "6123123123"
+        }
+      },
+      "languageId": 17,
+      "languageName": "Basque",
+      "currencyId": 6,
+      "currencyCurrency": "Euro",
+      "lines": [
+        {
+          "id": 1001,
+          "description": "Java book",
+          "quantity": 1,
+          "unitCost": 12.5,
+          "subTotal": 12.5,
+          "invoiceId": 951,
+          "invoiceNumber": "123"
+        },
+        {
+          "id": 1002,
+          "description": "JS playbook",
+          "quantity": 11,
+          "unitCost": 2,
+          "subTotal": 22,
+          "invoiceId": 951,
+          "invoiceNumber": "123"
+        }
+      ],
+      "tenantId": 1101,
+      "tenantName": "Quantixx"
+    }
+  ],
+  "languages": [
+    {
+      "id": 1,
+      "alpha3b": "aar",
+      "alpha2": "aa",
+      "name": "Afar",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 2,
+      "alpha3b": "abk",
+      "alpha2": "ab",
+      "name": "Abkhazian",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 3,
+      "alpha3b": "afr",
+      "alpha2": "af",
+      "name": "Afrikaans",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 4,
+      "alpha3b": "aka",
+      "alpha2": "ak",
+      "name": "Akan",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 5,
+      "alpha3b": "alb",
+      "alpha2": "sq",
+      "name": "Albanian",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 6,
+      "alpha3b": "amh",
+      "alpha2": "am",
+      "name": "Amharic",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 7,
+      "alpha3b": "ara",
+      "alpha2": "ar",
+      "name": "Arabic",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 8,
+      "alpha3b": "arg",
+      "alpha2": "an",
+      "name": "Aragonese",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 9,
+      "alpha3b": "arm",
+      "alpha2": "hy",
+      "name": "Armenian",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 10,
+      "alpha3b": "asm",
+      "alpha2": "as",
+      "name": "Assamese",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 11,
+      "alpha3b": "ava",
+      "alpha2": "av",
+      "name": "Avaric",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 12,
+      "alpha3b": "ave",
+      "alpha2": "ae",
+      "name": "Avestan",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 13,
+      "alpha3b": "aym",
+      "alpha2": "ay",
+      "name": "Aymara",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 14,
+      "alpha3b": "aze",
+      "alpha2": "az",
+      "name": "Azerbaijani",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 15,
+      "alpha3b": "bak",
+      "alpha2": "ba",
+      "name": "Bashkir",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 16,
+      "alpha3b": "bam",
+      "alpha2": "bm",
+      "name": "Bambara",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 17,
+      "alpha3b": "baq",
+      "alpha2": "eu",
+      "name": "Basque",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 18,
+      "alpha3b": "bel",
+      "alpha2": "be",
+      "name": "Belarusian",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 19,
+      "alpha3b": "ben",
+      "alpha2": "bn",
+      "name": "Bengali",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    },
+    {
+      "id": 20,
+      "alpha3b": "bih",
+      "alpha2": "bh",
+      "name": "Bihari languages",
+      "flag32": "",
+      "flag128": "",
+      "activated": false
+    }
+  ],
+  "organisations": [
+    {
+      "id": 1201,
+      "slug": "oak",
+      "name": "Oak",
+      "businessIdentification": "AU 1234 0976 8765",
+      "corporateName": "Oak Incorporation",
+      "vatIdentification": "AU3456789",
+      "address": {
+        "id": 951,
+        "street": "41 Kangourour Road",
+        "street2": null,
+        "city": "Perth",
+        "state": "WA",
+        "zipCode": "12345",
+        "countryId": 12,
+        "countryName": "Australia"
+      },
+      "contact": {
+        "id": 1051,
+        "firstName": "Peter",
+        "lastName": "Paul",
+        "email": "peter@paul.com",
+        "phoneArea": "+33",
+        "phoneNumber": "6123123123"
+      },
+      "tenantId": 1101,
+      "tenantName": "Quantixx"
+    },
+    {
+      "id": 1202,
+      "slug": "sun",
+      "name": "Sun Microsystem",
+      "businessIdentification": "US 4567 0987 8765",
+      "corporateName": "Sun Microsystem Incorporation",
+      "vatIdentification": null,
+      "address": {
+        "id": 952,
+        "street": "75 Sesame Street",
+        "street2": null,
+        "city": "Sydney",
+        "state": "EA",
+        "zipCode": "12345",
+        "additionalInformation": null,
+        "countryId": 12,
+        "countryName": "Australia"
+      },
+      "contact": {
+        "id": 1052,
+        "firstName": "John",
+        "lastName": "Atoak",
+        "activated": true,
+        "email": "john@oak.com",
+        "phoneArea": null,
+        "phoneNumber": null
+      },
+      "tenantId": 1101,
+      "tenantName": "Quantixx"
+    }
+  ],
+  "tenants": [
+    {
+      "id": 1101,
+      "slug": "quantixx",
+      "name": "Quantixx",
+      "companyName": "Quantixx SARL",
+      "description": null,
+      "vatIdentification": "AU12 1234 1234 1234",
+      "businessIdentification": null,
+      "businessRegistry": null,
+      "businessCode": null,
+      "businessAdditionalInformation": "SARL au capital de 3 000 euros",
+      "invoiceAddress": {
+        "id": 953,
+        "street": "Blue Flower",
+        "street2": null,
+        "city": "Huluru",
+        "state": "CA",
+        "zipCode": "12345",
+        "additionalInformation": null,
+        "countryId": 12,
+        "countryName": "Australia"
+      },
+      "bank": {
+        "id": 1001,
+        "bankName": "Osie Bank",
+        "agencyName": "Perth Central",
+        "bankAccount": "1234 1234 1234",
+        "iban": "AU99 1234 1234 1234 1234 1234 1234",
+        "bic": "FYTEBCDK",
+        "phoneArea": "+41",
+        "phoneNumber": "1234567",
+        "addressId": 951
+      },
+      "logoId": null,
+      "logoName": null,
+      "contact": {
+        "id": 1052,
+        "firstName": "John",
+        "lastName": "Atoak",
+        "activated": true,
+        "email": "john@oak.com",
+        "phoneArea": "+33",
+        "phoneNumber": "09 87 65 43 32"
+      }
+    }
+  ]
+}

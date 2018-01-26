@@ -1,0 +1,54 @@
+//
+
+$page-padding: 48px;
+$page-width: 794px;
+$content-width: $page-width - $page-padding;
+
+//
+
+:host {
+  display: flex;
+}
+
+section {
+  flex: 1;
+  min-width: 800px;
+  background: #eee;
+}
+
+.page {
+  width: $page-width;
+  padding: $page-padding;
+  background-color: white;
+  box-shadow: 0 0 0 0.75pt #d1d1d1, 0 0 3pt 0.75pt #ccc;
+  cursor: text;
+  white-space: normal;
+  -webkit-tap-highlight-color: initial;
+
+  /deep/ {
+    .form-control {
+      will-change: border-width;
+      transition: border-width 0.3s;
+
+      border-style: dashed;
+    }
+
+    .btn {
+      opacity: 1;
+
+      will-change: opacity;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &:not(:hover) /deep/ {
+    .form-control {
+      border-width: 0;
+      overflow: hidden;
+    }
+
+    .btn {
+      opacity: 0;
+    }
+  }
+}
