@@ -9,7 +9,7 @@
     "packageName": "io.epsil.invoice",
     "packageFolder": "io/epsil/invoice",
     "serverPort": "8080",
-    "authenticationType": "oauth2",
+    "authenticationType": "jwt",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": true,
     "websocket": false,
@@ -36,6 +36,7 @@
     "languages": [
       "en",
       "fr"
-    ]
+    ],
+    "jwtSecretKey": "12859f01b7cbd5464ff2c2265db0e1a8e828f384"
   }
 }
