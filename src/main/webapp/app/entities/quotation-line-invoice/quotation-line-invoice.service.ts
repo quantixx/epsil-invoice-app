@@ -9,7 +9,7 @@ import { ResponseWrapper, createRequestOption } from '../../shared';
 @Injectable()
 export class QuotationLineInvoiceService {
 
-    private resourceUrl =  SERVER_API_URL + 'api/quotation-lines';
+    private resourceUrl =  SERVER_API_URL + '/invoiceapi/api/quotation-lines';
 
     constructor(private http: Http) { }
 

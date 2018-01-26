@@ -9,7 +9,7 @@ import { ResponseWrapper, createRequestOption } from '../../shared';
 @Injectable()
 export class BankInvoiceService {
 
-    private resourceUrl =  SERVER_API_URL + 'api/banks';
+    private resourceUrl =  SERVER_API_URL + '/invoiceapi/api/banks';
 
     constructor(private http: Http) { }
 

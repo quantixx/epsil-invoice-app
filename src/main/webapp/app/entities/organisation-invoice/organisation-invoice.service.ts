@@ -11,7 +11,7 @@ import { ResponseWrapper, createRequestOption } from '../../shared';
 @Injectable()
 export class OrganisationInvoiceService {
 
-    private resourceUrl =  SERVER_API_URL + 'api/organisations';
+    private resourceUrl =  SERVER_API_URL + '/invoiceapi/api/organisations';
 
     constructor(private http: Http, private dateUtils: JhiDateUtils) { }
 

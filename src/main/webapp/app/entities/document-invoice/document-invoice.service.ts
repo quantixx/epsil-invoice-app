@@ -11,7 +11,7 @@ import { ResponseWrapper, createRequestOption } from '../../shared';
 @Injectable()
 export class DocumentInvoiceService {
 
-    private resourceUrl =  SERVER_API_URL + 'api/documents';
+    private resourceUrl =  SERVER_API_URL + '/invoiceapi/api/documents';
 
     constructor(private http: Http, private dateUtils: JhiDateUtils) { }
 

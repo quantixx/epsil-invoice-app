@@ -11,7 +11,7 @@ import { ResponseWrapper, createRequestOption } from '../../shared';
 @Injectable()
 export class QuotationStateInvoiceService {
 
-    private resourceUrl =  SERVER_API_URL + 'api/quotation-states';
+    private resourceUrl =  SERVER_API_URL + '/invoiceapi/api/quotation-states';
 
     constructor(private http: Http, private dateUtils: JhiDateUtils) { }
 
