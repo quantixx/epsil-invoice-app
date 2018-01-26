@@ -10,6 +10,8 @@ import {
     UserService,
     StateStorageService,
     LoginService,
+    LoginModalService,
+    InvLoginModalComponent,
     Principal,
     HasAnyAuthorityDirective,
 } from './';
@@ -20,10 +22,12 @@ import {
         InvoiceappSharedCommonModule
     ],
     declarations: [
+        InvLoginModalComponent,
         HasAnyAuthorityDirective
     ],
     providers: [
         LoginService,
+        LoginModalService,
         AccountService,
         StateStorageService,
         Principal,
@@ -32,8 +36,10 @@ import {
         UserService,
         DatePipe
     ],
+    entryComponents: [InvLoginModalComponent],
     exports: [
         InvoiceappSharedCommonModule,
+        InvLoginModalComponent,
         HasAnyAuthorityDirective,
         DatePipe
     ],

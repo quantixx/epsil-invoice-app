@@ -11,7 +11,7 @@ describe('Currency e2e test', () => {
         browser.get('/');
         browser.waitForAngular();
         navBarPage = new NavBarPage();
-        navBarPage.getSignInPage().loginWithOAuth('admin', 'admin');
+        navBarPage.getSignInPage().autoSignInUsing('admin', 'admin');
         browser.waitForAngular();
     });
 

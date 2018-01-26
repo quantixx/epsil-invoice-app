@@ -8,6 +8,7 @@ import { InvoiceappSharedModule, UserRouteAccessService } from './shared';
 import { InvoiceappAppRoutingModule} from './app-routing.module';
 import { InvoiceappHomeModule } from './home/home.module';
 import { InvoiceappAdminModule } from './admin/admin.module';
+import { InvoiceappAccountModule } from './account/account.module';
 import { InvoiceappEntityModule } from './entities/entity.module';
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
@@ -32,6 +33,7 @@ import {
         InvoiceappSharedModule,
         InvoiceappHomeModule,
         InvoiceappAdminModule,
+        InvoiceappAccountModule,
         InvoiceappEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],

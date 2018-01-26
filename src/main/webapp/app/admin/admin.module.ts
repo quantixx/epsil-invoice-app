@@ -7,6 +7,12 @@ import { InvoiceappSharedModule } from '../shared';
 import {
     adminState,
     AuditsComponent,
+    UserMgmtComponent,
+    UserDialogComponent,
+    UserDeleteDialogComponent,
+    UserMgmtDetailComponent,
+    UserMgmtDialogComponent,
+    UserMgmtDeleteDialogComponent,
     LogsComponent,
     InvMetricsMonitoringModalComponent,
     InvMetricsMonitoringComponent,
@@ -21,6 +27,9 @@ import {
     GatewayRoutesService,
     InvGatewayComponent,
     LogsService,
+    UserResolvePagingParams,
+    UserResolve,
+    UserModalService
 } from './';
 
 @NgModule({
@@ -31,6 +40,12 @@ import {
     ],
     declarations: [
         AuditsComponent,
+        UserMgmtComponent,
+        UserDialogComponent,
+        UserDeleteDialogComponent,
+        UserMgmtDetailComponent,
+        UserMgmtDialogComponent,
+        UserMgmtDeleteDialogComponent,
         LogsComponent,
         InvConfigurationComponent,
         InvHealthCheckComponent,
@@ -41,6 +56,8 @@ import {
         InvMetricsMonitoringModalComponent
     ],
     entryComponents: [
+        UserMgmtDialogComponent,
+        UserMgmtDeleteDialogComponent,
         InvHealthModalComponent,
         InvMetricsMonitoringModalComponent,
     ],
@@ -51,6 +68,9 @@ import {
         InvMetricsService,
         GatewayRoutesService,
         LogsService,
+        UserResolvePagingParams,
+        UserResolve,
+        UserModalService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

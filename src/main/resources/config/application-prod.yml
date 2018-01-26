@@ -117,6 +117,13 @@ jhipster:
                 enabled: false
                 update-interval: 3
                 url:
+    security:
+        authentication:
+            jwt:
+                secret: 12859f01b7cbd5464ff2c2265db0e1a8e828f384
+                # Token is valid 24 hours
+                token-validity-in-seconds: 86400
+                token-validity-in-seconds-for-remember-me: 2592000
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: invoiceapp@localhost
         base-url: http://my-server-url-to-change # Modify according to your server's URL

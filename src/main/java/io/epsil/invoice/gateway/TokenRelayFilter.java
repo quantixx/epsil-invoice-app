@@ -1,25 +1,20 @@
 package io.epsil.invoice.gateway;
 
-import io.epsil.invoice.security.oauth2.AuthorizationHeaderUtil;
-
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.springframework.stereotype.Component;
 
+import java.util.Set;
+
 @Component
 public class TokenRelayFilter extends ZuulFilter {
-
-    public static final String AUTHORIZATION_HEADER = "Authorization";
 
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
-        // Add specific authorization headers for OAuth2
-        if (AuthorizationHeaderUtil.getAuthorizationHeader().isPresent()) {
-            ctx.addZuulRequestHeader(AUTHORIZATION_HEADER,
-                AuthorizationHeaderUtil.getAuthorizationHeader().get());
-
-        }
+        Set<String> headers = (Set<String>) ctx.get("ignoredHeaders");
+        // JWT tokens should be relayed to the resource servers
+        headers.remove("authorization");
         return null;
     }
 
