@@ -14,6 +14,17 @@ $ docker-compose -f src/main/docker/postgresql.yml up -d
 
 ## Development
 
+## Development
+
+### Playground app
+
+To simplify the front end development, we provide a playground that uses a snapshot
+of the database. 
+
+    yarn start:playground
+
+### Main app
+
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
 1. [Node.js][]: We use Node to run a development web server and build the project.
