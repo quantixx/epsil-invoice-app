@@ -1,0 +1,12 @@
+{
+    "extends": "../../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../../out-tsc/app",
+        "module": "es2015",
+        "types": ["node"],
+        "paths": {
+            "@epsil-invoice-ui/*": ["libs/@epsil-invoice-ui/*"]
+        }
+    },
+    "exclude": ["test.ts", "**/*.spec.ts"]
+}

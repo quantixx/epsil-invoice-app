@@ -12,18 +12,16 @@
         "suppressImplicitAnyIndexErrors": true,
         "outDir": "target/www/app",
         "lib": ["es6", "dom"],
-        "typeRoots": [
-            "node_modules/@types"
-        ],
+        "typeRoots": ["node_modules/@types"],
         "baseUrl": "./",
         "paths": {
-            "@angular/*": [
-                "../node_modules/@angular/*"
-            ]
+            "@angular/*": ["../node_modules/@angular/*"],
+            "@epsil/*": ["epsil_modules/@epsil/*"]
         }
     },
     "include": [
         "src/main/webapp/app",
+        "src/playground/src",
         "src/test/javascript/"
     ]
 }

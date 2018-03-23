@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration::NavbarComponent should create 1`] = `
+<epsil-playground-home
+  data={[Function Observable]}
+  http={[Function HttpClient]}
+>
+  
+  
+  <div
+    class="jumbotron p-3 p-md-5 text-white rounded bg-dark"
+  >
+    
+    
+    <div
+      class="container"
+    >
+      
+      
+      <h1
+        class="display-4"
+      >
+        
+        Welcome to the quantixx/epsil-invoice-ui playground
+      
+      </h1>
+      
+    
+    </div>
+    
+  
+  </div>
+  
+  
+  
+  <div
+    class="container"
+  >
+    
+  
+    
+    <p>
+      Use the menu to navbar to go one of the mocked pages
+    </p>
+    
+  
+    
+    <h2>
+      General info
+    </h2>
+    
+  
+    
+    <h3>
+      Current
+      
+      <code>
+        /invoices
+      </code>
+       response
+    </h3>
+    
+  
+    
+    <pre>
+      null
+    </pre>
+    
+  
+  
+  </div>
+  
+  
+  
+</epsil-playground-home>
+`;
