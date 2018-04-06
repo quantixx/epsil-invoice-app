@@ -15,8 +15,7 @@
         "typeRoots": ["node_modules/@types"],
         "baseUrl": "./",
         "paths": {
-            "@angular/*": ["../node_modules/@angular/*"],
-            "@epsil/*": ["epsil_modules/@epsil/*"]
+            "@angular/*": ["../node_modules/@angular/*"]
         }
     },
     "include": [
