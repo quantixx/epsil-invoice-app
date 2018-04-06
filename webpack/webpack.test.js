@@ -1,22 +1,35 @@
-
 const webpack = require('webpack');
 const path = require('path');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
 const utils = require('./utils.js');
 
-module.exports = (WATCH) => ({
+module.exports = WATCH => ({
     resolve: {
         extensions: ['.ts', '.js']
     },
     module: {
         rules: [
             {
-                test: /\.ts$/, enforce: 'pre', loader: 'tslint-loader', exclude: /node_modules/
+                test: /\.ts$/,
+                enforce: 'pre',
+                loader: 'tslint-loader',
+                exclude: /node_modules/
             },
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader?keepUrl=true'],
+                use: [
+                    {
+                        loader: 'awesome-typescript-loader',
+                        options: {
+                            configFileName: path.resolve(
+                                __dirname,
+                                '../src/test/javascript/spec/tsconfig.json'
+                            )
+                        }
+                    },
+                    'angular2-template-loader?keepUrl=true'
+                ],
                 exclude: /node_modules/
             },
             {
@@ -34,14 +47,18 @@ module.exports = (WATCH) => ({
             },
             {
                 test: /\.(jpe?g|png|gif|svg|woff2?|ttf|eot)$/i,
-                loaders: ['file-loader?hash=sha512&digest=hex&name=[hash].[ext]']
+                loaders: [
+                    'file-loader?hash=sha512&digest=hex&name=[hash].[ext]'
+                ]
             },
             {
                 test: /src[/|\\]main[/|\\]webapp[/|\\].+\.ts$/,
                 enforce: 'post',
                 exclude: /(test|node_modules)/,
-                loader: 'sourcemap-istanbul-instrumenter-loader?force-sourcemap=true'
-            }]
+                loader:
+                    'sourcemap-istanbul-instrumenter-loader?force-sourcemap=true'
+            }
+        ]
     },
     plugins: [
         new webpack.SourceMapDevToolPlugin({
