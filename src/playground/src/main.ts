@@ -11,10 +11,10 @@ import 'bootstrap';
 //
 
 if (environment.production) {
-  enableProdMode();
+    enableProdMode();
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  // tslint:disable-next-line:no-console
-  .catch(err => console.error(err));
+    .bootstrapModule(AppModule)
+    // tslint:disable-next-line:no-console
+    .catch(err => console.error(err));
