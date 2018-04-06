@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1301,
+    "number": "spn_123456",
+    "title": "Invoice definition for common invoices",
+    "description": null,
+    "docType": "INVOICE",
+    "invoiceType": "INVOICE",
+    "terms": "30 days after the end of the mon",
+    "penalties": "20% penalties after 30 days of not paying the invoice",
+    "additionalInformation": "nothing special",
+    "poNumber": "PO #345678",
+    "vatRate": 20.0,
+    "subTotalBeforeDiscount": null,
+    "discountRate": null,
+    "discountAmount": null,
+    "subTotal": 12.0,
+    "vatAmount": 23.0,
+    "total": 345.0,
+    "family": {
+      "id": 1251,
+      "slug": "spn",
+      "name": "Sponsor",
+      "colour": "#4286f4"
+    },
+    "organisation": {
+      "id": 1201,
+      "slug": "oak",
+      "name": "Oak",
+      "businessIdentification": "AU 1234 0976 8765",
+      "corporateName": "Oak Incorporation",
+      "vatIdentification": "AU3456789",
+      "address": {
+        "id": 951,
+        "street": "41 Kangourour Road",
+        "street2": null,
+        "city": "Perth",
+        "state": "WA",
+        "zipCode": "12345",
+        "countryId": 12,
+        "countryName": "Australia"
+      },
+      "contact": {
+        "id": 1051,
+        "firstName": "Peter",
+        "lastName": "Paul",
+        "email": "peter@paul.com",
+        "phoneArea": "+33",
+        "phoneNumber": "6123123123"
+      }
+    },
+    "languageId": 17,
+    "languageName": "Basque",
+    "currencyId": 6,
+    "currencyCurrency": "Euro",
+    "lines": [
+      {
+        "id": 1001,
+        "description": "Java book",
+        "quantity": 1,
+        "unitCost": 12.5,
+        "subTotal": 12.5,
+        "invoiceId": 951,
+        "invoiceNumber": "123"
+      },
+      {
+        "id": 1002,
+        "description": "JS playbook",
+        "quantity": 11,
+        "unitCost": 2.0,
+        "subTotal": 22.0,
+        "invoiceId": 951,
+        "invoiceNumber": "123"
+      }
+    ],
+    "tenantId": 1101,
+    "tenantName": "Quantixx"
+  }
+]

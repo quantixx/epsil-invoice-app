@@ -1,0 +1,35 @@
+[
+  {
+    "id": 951,
+    "street": "41 Kangourour Road",
+    "street2": null,
+    "city": "Perth",
+    "state": "WA",
+    "zipCode": "12345",
+    "additionalInformation": null,
+    "countryId": 12,
+    "countryName": "Australia"
+  },
+  {
+    "id": 952,
+    "street": "75 Sesame Street",
+    "street2": null,
+    "city": "Sydney",
+    "state": "EA",
+    "zipCode": "12345",
+    "additionalInformation": null,
+    "countryId": 12,
+    "countryName": "Australia"
+  },
+  {
+    "id": 953,
+    "street": "Blue Flower",
+    "street2": null,
+    "city": "Huluru",
+    "state": "CA",
+    "zipCode": "12345",
+    "additionalInformation": null,
+    "countryId": 12,
+    "countryName": "Australia"
+  }
+]

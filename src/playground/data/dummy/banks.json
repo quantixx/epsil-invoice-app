@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1001,
+    "bankName": "Osie Bank",
+    "agencyName": "Perth Central",
+    "bankAccount": "1234 1234 1234",
+    "iban": "AU99 1234 1234 1234 1234 1234 1234",
+    "bic": "FYTEBCDK",
+    "phoneArea": "+41",
+    "phoneNumber": "1234567",
+    "addressId": 951
+  }
+]

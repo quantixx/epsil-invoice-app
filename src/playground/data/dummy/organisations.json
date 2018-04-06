@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1201,
+    "slug": "oak",
+    "name": "Oak",
+    "businessIdentification": "AU 1234 0976 8765",
+    "corporateName": "Oak Incorporation",
+    "vatIdentification": "AU3456789",
+    "address": {
+      "id": 951,
+      "street": "41 Kangourour Road",
+      "street2": null,
+      "city": "Perth",
+      "state": "WA",
+      "zipCode": "12345",
+      "countryId": 12,
+      "countryName": "Australia"
+    },
+    "contact": {
+      "id": 1051,
+      "firstName": "Peter",
+      "lastName": "Paul",
+      "email": "peter@paul.com",
+      "phoneArea": "+33",
+      "phoneNumber": "6123123123"
+    },
+    "tenantId": 1101,
+    "tenantName": "Quantixx"
+  },
+  {
+    "id": 1202,
+    "slug": "sun",
+    "name": "Sun Microsystem",
+    "businessIdentification": "US 4567 0987 8765",
+    "corporateName": "Sun Microsystem Incorporation",
+    "vatIdentification": null,
+    "address": {
+      "id": 952,
+      "street": "75 Sesame Street",
+      "street2": null,
+      "city": "Sydney",
+      "state": "EA",
+      "zipCode": "12345",
+      "additionalInformation": null,
+      "countryId": 12,
+      "countryName": "Australia"
+    },
+    "contact": {
+      "id": 1052,
+      "firstName": "John",
+      "lastName": "Atoak",
+      "activated": true,
+      "email": "john@oak.com",
+      "phoneArea": null,
+      "phoneNumber": null
+    },
+    "tenantId": 1101,
+    "tenantName": "Quantixx"
+  }
+]

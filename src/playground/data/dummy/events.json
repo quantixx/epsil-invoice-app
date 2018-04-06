@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1151,
+    "slug": "devfr",
+    "name": "Devoxx France",
+    "virtual": false,
+    "startsOn": null,
+    "endsOn": null,
+    "tenantId": 1101,
+    "tenantName": "Quantixx"
+  }
+]
