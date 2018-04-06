@@ -1,0 +1,217 @@
+<epsil-editor-layout class="bg-light">
+
+  <header class="row no-gutters justify-content-between mb-5">
+
+    <section class="author-section row">
+      <div class="col-3">
+        <div class="author-section__img h-100"
+          style="background-image: url('assets/logo.webp')">
+        </div>
+      </div>
+      <div class="col-9">
+        <textarea class="form-control"
+          name=""
+          id=""
+          cols="30"
+          rows="6">
+SARL QUANTIXX
+10 rue Penthièvre
+7508 PARIS
+Tel: 06 23 22 20 19
+@: info@quantixx.io
+        </textarea>
+
+      </div>
+    </section>
+
+    <section class="client-section col-5">
+
+      <input class="form-control"
+        type="text"
+        placeholder="Client">
+      <input class="form-control"
+        type="text"
+        placeholder="Address postal">
+
+      <div class="row no-gutters">
+        <div class="col-5">
+          <input class="form-control"
+            type="text"
+            placeholder="Code Postal">
+        </div>
+        <div class="col-7">
+          <input class="form-control"
+            type="text"
+            placeholder="Ville">
+        </div>
+      </div>
+      <input class="form-control"
+        type="text"
+        placeholder="Pays">
+      <input class="form-control"
+        type="text"
+        placeholder="Numéro de TVA intracommunataire">
+      <input class="form-control"
+        type="text"
+        placeholder="Email principal">
+      <input class="form-control"
+        type="text"
+        placeholder="Téléphone principal">
+
+    </section>
+
+  </header>
+
+  <input class="form-control h4"
+    type="text"
+    placeholder="Intitulé de la facture">
+
+  <div class="row no-gutters align-items-center my-2">
+    <div class="col-2">
+      <select class="form-control"
+        name=""
+        id="">
+        <option value="">Avoir</option>
+      </select>
+    </div>
+    <div class="col pl-3">
+      N°123456789-0001
+    </div>
+  </div>
+
+
+  <div class="row no-gutters align-items-center my-2 form-inline">
+    <div class="col-8">
+      Date d'émission:
+      <input class="form-control"
+        type="date">
+    </div>
+    <div class="col-4">
+      Réglement:
+      <input class="form-control w-50"
+        type="text"
+        placeholder="Réglement"
+        value="A réception">
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th width="50%">Désignation</th>
+        <th>Quantité</th>
+        <th>Prix unitaire</th>
+        <th>Montant HT</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          <input type="text"
+            class="form-control"
+            placeholder="Indiquez ici votre description">
+        </td>
+        <td>
+          <input type="text"
+            class="form-control"
+            placeholder="">
+        </td>
+        <td>
+          <input type="text"
+            class="form-control"
+            placeholder="">
+        </td>
+        <td class="text-right">
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="table table-boderless">
+    <tbody>
+      <tr>
+        <td class="position-relative"
+          width="50%">
+          <button class="btn position-absolute">Ajouter une ligne</button>
+        </td>
+        <td colspan="2">
+          TOTAL HT
+        </td>
+        <td class="text-right">
+          0.00 €
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td class="py-1"
+          colspan="2">
+          <div class="form-inline">
+            <span>TVA </span>
+            <select class="form-control ml-3"
+              name=""
+              id="">
+              <option value="20">20%</option>
+            </select>
+          </div>
+        </td>
+        <td class="text-right">
+          0.00 €
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="pb-0"
+          colspan="3">
+          <hr class="mb-0">
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td colspan="2">
+          TOTAL TTC
+        </td>
+        <td class="text-right">
+          0.00 €
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="mt-5">
+
+  <textarea class="form-control"
+    name=""
+    id=""
+    cols="30"
+    rows="2">
+    RIB: 1234567 45689 13546879 56
+    IBAN-BIC: FR 45 12313 65487 1231 64568 7987 654 312 - CMCI FR 2A XXX
+  </textarea>
+
+  <textarea class="form-control mt-1"
+    name=""
+    id=""
+    cols="30"
+    rows="2">
+    En cas de retard de paiement, une pénalité de 3 fois le taux d'intérêt sera appliquée, à laquelle s'ajoutera une indemnité forfaitaire de recouvrement de 40€.
+  </textarea>
+
+  <br>
+
+  <textarea class="form-control"
+    name=""
+    id=""
+    cols="30"
+    rows="3">
+    SARL capital
+    Siret: 123 456 789 00000 - RCS : PARIS - NAF: 8230Z
+    TVA Intercommunautaire: FR 12 345 6789
+  </textarea>
+
+</epsil-editor-layout>

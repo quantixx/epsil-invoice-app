@@ -5,8 +5,8 @@ import { Component, Input } from '@angular/core';
 //
 
 @Component({
-  selector: 'spn-ui-invoice-table',
-  styleUrls: ['./table.component.css'],
+  selector: 'epsil-ui-invoice-table',
+  styleUrls: ['./table.component.scss'],
   templateUrl: './table.component.html'
 })
 export class TableComponent {

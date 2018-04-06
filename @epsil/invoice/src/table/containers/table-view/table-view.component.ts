@@ -7,8 +7,8 @@ import { Observable } from 'rxjs/Observable';
 //
 
 @Component({
-  selector: 'spn-ui-invoice-table-view',
-  styleUrls: ['./table-view.component.css'],
+  selector: 'epsil-ui-invoice-table-view',
+  styleUrls: ['./table-view.component.scss'],
   templateUrl: './table-view.component.html'
 })
 export class TableViewComponent implements OnInit {
