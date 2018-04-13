@@ -16,7 +16,6 @@
     "@angular/platform-browser": "5.2.2",
     "@angular/platform-browser-dynamic": "5.2.2",
     "@angular/router": "5.2.2",
-    "@epsil-front/home": "/home/x/tmp/epsil-invoice-front/packages/home/dist",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0",
     "bootstrap": "^4.0.0",
     "core-js": "2.4.1",
