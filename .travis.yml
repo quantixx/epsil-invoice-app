@@ -17,4 +17,5 @@ before_install:
 
 script:
   - yarn lint
-  - yarn test:unit
+  - yarn test:jest
+  - yarn test:karma
