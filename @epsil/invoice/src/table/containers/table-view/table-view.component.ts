@@ -7,16 +7,16 @@ import { Observable } from 'rxjs/Observable';
 //
 
 @Component({
-  selector: 'epsil-ui-invoice-table-view',
-  styleUrls: ['./table-view.component.scss'],
-  templateUrl: './table-view.component.html'
+    selector: 'spn-ui-invoice-table-view',
+    styleUrls: ['./table-view.component.scss'],
+    templateUrl: './table-view.component.html'
 })
 export class TableViewComponent implements OnInit {
-  public invoices$: Observable<any>;
+    public invoices$: Observable<any>;
 
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
-  public ngOnInit() {
-    this.invoices$ = this.http.get('http://localhost:5555/invoices');
-  }
+    public ngOnInit() {
+        this.invoices$ = this.http.get('http://localhost:5555/invoices');
+    }
 }
